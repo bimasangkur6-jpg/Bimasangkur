@@ -9,47 +9,86 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232F5FD0'/%3E%3Ctext x='50' y='67' font-size='50' fill='white' text-anchor='middle' font-family='-apple-system,Arial,sans-serif' font-weight='700'%3EB%3C/text%3E%3C/svg%3E">
 <style>
   :root{
-    --bg:#FFFFFF;
-    --bg-alt:#F5F7FB;
-    --text:#181A1E;
-    --muted:#6B7280;
+    --bg:#FCFCFE;
+    --text:#14161A;
+    --muted:#666D78;
     --border:#E7E9EE;
     --accent:#2F5FD0;
     --accent-2:#6C8EE8;
+    --accent-3:#7C6CF0;
     --accent-soft:#EAF0FC;
-    --shadow:rgba(23,26,30,.08);
+    --glass:rgba(255,255,255,.6);
+    --glass-border:rgba(255,255,255,.7);
+    --shadow:rgba(20,22,26,.10);
     --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+
+    /* EDIT: kalau mau pakai Google Fonts (Sora + Inter) alih-alih font sistem,
+       tambahkan di <head>:
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+       lalu ganti --font-display di bawah jadi: "Sora",var(--font)
+       (butuh koneksi internet saat halaman dibuka — makanya defaultnya nggak dipakai) */
+    --font-display:var(--font);
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --bg:#15171B;
-      --bg-alt:#1D2026;
-      --text:#E7E8EA;
+      --bg:#101216;
+      --text:#EDEEF0;
       --muted:#9BA1AA;
-      --border:#2B2E35;
+      --border:#262931;
       --accent:#7EA6F0;
       --accent-2:#4A6FD1;
-      --accent-soft:#1E2634;
-      --shadow:rgba(0,0,0,.4);
+      --accent-3:#9A8CF5;
+      --accent-soft:#1C2433;
+      --glass:rgba(28,31,38,.55);
+      --glass-border:rgba(255,255,255,.08);
+      --shadow:rgba(0,0,0,.45);
     }
   }
 
   *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:
-      radial-gradient(560px 320px at 12% -8%, var(--accent-soft), transparent 60%),
-      var(--bg);
+    background:var(--bg);
     color:var(--text);
     font-family:var(--font);
     font-size:17px;
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
   h1,h2,p,dl,dd{margin:0;}
   a{color:inherit;}
 
+  /* ---------- Ambient background ---------- */
+  .bg-decor{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .bg-decor span{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(70px);
+    opacity:.5;
+  }
+  .bg-decor span:nth-child(1){
+    width:420px;height:420px;
+    top:-160px;left:-120px;
+    background:radial-gradient(circle, var(--accent-2), transparent 70%);
+  }
+  .bg-decor span:nth-child(2){
+    width:380px;height:380px;
+    top:280px;right:-160px;
+    background:radial-gradient(circle, var(--accent-3), transparent 70%);
+    opacity:.35;
+  }
+
   .page{
+    position:relative;
     max-width:36rem;
     margin-inline:auto;
     padding:clamp(3rem,9vw,5rem) 1.5rem clamp(3.5rem,8vw,5rem);
@@ -67,19 +106,30 @@
     color:#fff;
     display:flex;align-items:center;justify-content:center;
     font-size:1.6rem;font-weight:700;letter-spacing:.02em;
-    box-shadow:0 12px 28px -10px var(--shadow);
-    margin-bottom:1.5rem;
+    box-shadow:
+      0 12px 28px -10px var(--shadow),
+      0 0 0 8px var(--accent-soft);
+    margin-bottom:1.6rem;
+    transition:transform .3s ease;
   }
+  .avatar:hover{transform:scale(1.04);}
+
   h1{
+    font-family:var(--font-display);
     font-size:clamp(1.9rem,4vw,2.3rem);
-    font-weight:700;
+    font-weight:800;
     letter-spacing:-.02em;
     line-height:1.15;
+    background:linear-gradient(100deg, var(--text) 40%, var(--accent));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    width:fit-content;
   }
   .role{
     color:var(--accent);
     font-weight:600;
-    margin-top:.4rem;
+    margin-top:.45rem;
     margin-bottom:1.4rem;
   }
   .intro p + p{margin-top:.9rem;}
@@ -95,25 +145,32 @@
     align-items:center;
     padding:.55rem 1.15rem;
     border-radius:999px;
-    background:var(--bg-alt);
+    background:var(--glass);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
     border:1px solid var(--border);
     font-size:.9rem;
     font-weight:600;
     text-decoration:none;
-    transition:background .2s,border-color .2s,color .2s,transform .2s;
+    transition:background .2s,border-color .2s,color .2s,transform .2s,box-shadow .2s;
   }
   .links a:hover,.links a:focus-visible{
     background:var(--accent-soft);
     border-color:var(--accent);
     color:var(--accent);
-    transform:translateY(-1px);
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px -12px var(--accent);
   }
 
-  /* ---------- Sections (card blocks) ---------- */
+  /* ---------- Sections (glass card blocks) ---------- */
   .block{
-    background:var(--bg-alt);
-    border-radius:20px;
-    padding:1.75rem 1.85rem;
+    background:var(--glass);
+    backdrop-filter:blur(20px) saturate(160%);
+    -webkit-backdrop-filter:blur(20px) saturate(160%);
+    border:1px solid var(--glass-border);
+    border-radius:22px;
+    padding:1.85rem 1.95rem;
+    box-shadow:0 20px 40px -28px var(--shadow);
   }
   h2{
     font-size:1rem;
@@ -123,14 +180,21 @@
   .note{color:var(--muted);}
 
   /* ---------- Keahlian ---------- */
-  .skill-group + .skill-group{margin-top:1.1rem;}
+  .skills-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.1rem;
+  }
+  @media (min-width:480px){
+    .skills-grid{grid-template-columns:1fr 1fr;}
+  }
   .skill-group dt{
     font-size:.8rem;
     font-weight:600;
     color:var(--muted);
     text-transform:uppercase;
     letter-spacing:.04em;
-    margin-bottom:.55rem;
+    margin-bottom:.6rem;
   }
   .skill-group dd{
     display:flex;flex-wrap:wrap;gap:.5rem;
@@ -143,7 +207,9 @@
     color:var(--accent);
     font-size:.85rem;
     font-weight:600;
+    transition:transform .2s;
   }
+  .pill:hover{transform:translateY(-1px);}
 
   /* ---------- Footer ---------- */
   footer{
@@ -152,16 +218,32 @@
     padding-top:.5rem;
   }
 
+  /* ---------- Scroll reveal ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .avatar,.pill,.links a{transition:none;}
+  }
+
   @media (max-width:420px){
-    .block{padding:1.5rem;border-radius:16px;}
+    .block{padding:1.5rem;border-radius:18px;}
   }
 </style>
 </head>
 <body>
 
+<div class="bg-decor" aria-hidden="true"><span></span><span></span></div>
+
 <div class="page">
 
-  <header class="intro">
+  <header class="intro reveal">
     <!-- EDIT: kalau mau pakai foto, ganti div di bawah dengan:
          <img class="avatar" src="foto.jpg" alt="Foto Bima Sangkur" style="object-fit:cover;"> -->
     <div class="avatar" aria-hidden="true">BS</div>
@@ -185,11 +267,11 @@
     </nav>
   </header>
 
-  <section class="block">
+  <section class="block reveal">
     <h2>Keahlian</h2>
     <!-- EDIT: isi hanya yang benar-benar pernah dipakai.
          Lebih baik sedikit tapi jujur — ini yang ditanya saat wawancara. -->
-    <dl>
+    <dl class="skills-grid">
       <div class="skill-group">
         <dt>Sudah dipakai</dt>
         <dd>
@@ -210,7 +292,7 @@
     </dl>
   </section>
 
-  <section class="block">
+  <section class="block reveal">
     <h2>Proyek</h2>
     <p class="note">Belum ada yang saya pajang. Lagi dikerjakan, nanti saya tambahkan.</p>
 
@@ -237,14 +319,34 @@
          ============================================================ -->
   </section>
 
-  <footer>
+  <footer class="reveal">
     <p>Indonesia &middot; &copy; <span id="year"></span> Bima Sangkur</p>
   </footer>
 
 </div>
 
 <script>
+(function(){
+  "use strict";
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealEls = document.querySelectorAll(".reveal");
+
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealEls.forEach(function(el){ el.classList.add("is-visible"); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+  revealEls.forEach(function(el){ observer.observe(el); });
+})();
 </script>
 </body>
 </html>
