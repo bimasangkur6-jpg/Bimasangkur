@@ -1,56 +1,57 @@
-# Halaman Personal — Bima Sangkur
+# Portofolio Web Developer
 
-Satu file (`index.html`), HTML + CSS murni. JavaScript-nya cuma satu baris untuk menampilkan tahun di footer. Tanpa framework, tanpa build tool.
+Website portofolio satu-file (`index.html` — HTML, CSS, dan JavaScript murni, tanpa framework/build tool). Tinggal edit teksnya dan langsung bisa dipakai.
 
-## Cara membuka
+## Cara melihat hasilnya
 
-Klik dua kali `index.html`. Tidak perlu server atau instalasi apa pun.
+Klik dua kali `index.html`, atau buka lewat browser (Chrome/Edge/Firefox). Tidak perlu server atau instalasi apa pun.
 
-## Kenapa desainnya seperti ini
+## Checklist yang perlu diedit
 
-Isi halamannya memang sedikit — nama, dua paragraf, daftar keahlian, kontak. Kalau kerangkanya besar (navigasi sticky, kartu kaca/blur, gradasi warna-warni), yang terlihat malah kesenjangan antara "banyak hiasan" dan "sedikit isi".
+Cari komentar `<!-- EDIT: ... -->` di dalam `index.html` — semua ada di bagian ini:
 
-Jadi halaman ini dibuat tanpa navigasi, gaya "catatan kerja": font monospace untuk label/meta (peran, tombol kontak, footer), font biasa untuk teks yang dibaca, antar-bagian dipisah garis tipis (bukan kartu), dan tekstur titik-titik halus di latar biar tidak terasa kosong. Satu warna aksen (hijau lumut) dipakai konsisten, tanpa gradasi atau blur.
+- [ ] **Nama** — ganti semua kemunculan "Nama Anda" (judul tab, header, hero, footer)
+- [ ] **Peran/jabatan** — "Full-Stack Web Developer" di hero
+- [ ] **Bio** — 2 paragraf di bagian "Tentang Saya"
+- [ ] **Kartu ID di hero** — lokasi, fokus, pengalaman, bahasa
+- [ ] **Statistik** — angka tahun pengalaman / proyek / klien (atribut `data-count`)
+- [ ] **Skill** — daftar teknologi di 3 kartu (Frontend, Backend, Tools)
+- [ ] **4 kartu proyek** — judul, deskripsi, tech tag, link "Live Demo" & "Kode Sumber"
+- [ ] **Pengalaman kerja** — 3 entri linimasa (tanggal, jabatan, perusahaan, pencapaian)
+- [ ] **Testimoni** — 2 kutipan (atau hapus section `#testimonials` kalau belum punya)
+- [ ] **Kontak** — email, nomor WA, lokasi di section kontak & tautan `mailto:`
+- [ ] **GitHub / LinkedIn** — ganti `https://github.com/username` dan `https://linkedin.com/in/username`
+- [ ] **CV** — taruh file PDF CV kamu di folder ini, lalu ganti `href="cv-anda.pdf"` sesuai nama filenya
 
-**Layout-nya menyesuaikan lebar layar:**
-- Di bawah 880px (HP, tablet) — satu kolom, ditumpuk dari atas ke bawah.
-- Di atas 880px (laptop, desktop) — dua kolom: profil nempel di kiri (ikut ke-scroll/sticky), isi (Keahlian, Proyek) di kanan. Supaya layar laptop terisi dengan wajar, bukan satu kolom sempit yang dikelilingi ruang kosong.
+## Catatan penting: form kontak
 
-Sudah dicek tampilannya di lebar layar 320px sampai 1920px (HP kecil sampai layar lebar), termasuk mode terang dan gelap — mode gelap mengikuti pengaturan sistem secara otomatis, tanpa tombol.
+Form di section "Kontak" saat ini **belum terhubung ke layanan pengiriman email** — kalau ada yang isi form, pesannya tidak benar-benar terkirim ke mana pun. Untuk mengaktifkannya, pilih salah satu:
 
-## Yang perlu diedit
+1. **Formspree** (termudah, gratis untuk pemakaian ringan) — daftar di [formspree.io](https://formspree.io), ganti atribut form jadi `action="https://formspree.io/f/xxxxxxx" method="POST"`, hapus `id="contactForm"` dan handler JS di bagian bawah `<script>` (blok `Contact form (front-end only)`).
+2. **EmailJS** — kirim email langsung dari browser tanpa backend, cocok kalau mau tetap pakai JavaScript yang sudah ada.
+3. **Backend sendiri** — kalau kamu punya server (Node.js/PHP/dll), arahkan `fetch()` di JavaScript ke endpoint API kamu.
 
-Cari komentar `<!-- EDIT: ... -->` di `index.html`:
+## Deploy (gratis)
 
-- [ ] **Keahlian** — isinya sekarang perkiraan. Isi hanya yang benar-benar pernah dipakai
-- [ ] **Proyek** — sengaja dikosongkan sampai ada karya nyata (lihat bawah)
-- [ ] **Foto** (opsional) — sekarang pakai lingkaran berisi inisial "BS". Kalau mau pakai foto asli, taruh filenya di folder ini lalu ganti `<div class="avatar">` jadi `<img class="avatar" src="foto.jpg" alt="Foto Bima Sangkur">`
+Paling gampang pakai salah satu dari ini — tinggal drag & drop folder ini:
 
-## Cara menambah proyek
-
-Di dalam `index.html`, cari `CARA MENAMBAH PROYEK`. Template-nya sudah ada di situ dalam bentuk komentar, tinggal disalin keluar.
-
-Soal link demo/kode: **jangan pasang link yang tidak mengarah ke mana-mana.** Link mati membuat halaman terlihat belum jadi — lebih baik nama proyeknya ditulis sebagai teks biasa dulu.
-
-Untuk posisi developer, link ke **kode sumber (GitHub)** biasanya lebih penting daripada live demo, karena yang dinilai adalah cara menulis kodenya.
-
-**Ide proyek pertama:** halaman ini sendiri sudah sah dihitung sebagai proyek — reponya sudah ada di GitHub. Selain itu To-Do List app, kalkulator, atau aplikasi cuaca (latihan pakai API) adalah proyek pemula yang umum. Semuanya bisa dihosting gratis di GitHub Pages.
-
-## Menayangkan online (GitHub Pages)
-
-Repo: <https://github.com/bimasangkur6-jpg/bimasangkur>
-
-1. Buka **Settings → Pages**
-2. Bagian **Source**, pilih **Deploy from a branch**
-3. Pilih branch `main`, folder `/ (root)`, lalu **Save**
-4. Tunggu 1–2 menit. Situs terbit di `https://bimasangkur6-jpg.github.io/bimasangkur/`
-
-Untuk mematikan lagi: ubah **Source** jadi **None**.
+- **Netlify Drop**: [app.netlify.com/drop](https://app.netlify.com/drop)
+- **Vercel**: `vercel deploy` (butuh akun + Vercel CLI)
+- **GitHub Pages**: push folder ini ke repo GitHub, aktifkan Pages di Settings → Pages, pilih branch `main`
 
 ## Struktur
 
 ```
 portfolio-website/
-├── index.html   ← semua ada di sini
-└── README.md
+├── index.html   ← semua kode ada di sini (CSS di dalam <style>, JS di dalam <script>)
+└── README.md    ← file ini
 ```
+
+## Fitur yang sudah ada
+
+- Mode terang/gelap (ikut preferensi sistem, atau toggle manual — tersimpan di browser)
+- Navigasi aktif otomatis mengikuti scroll (scrollspy)
+- Animasi muncul saat scroll + angka statistik yang menghitung naik
+- Menu mobile (hamburger) untuk layar kecil
+- Sepenuhnya responsif (HP, tablet, desktop)
+- Menghormati pengaturan "reduce motion" di OS untuk aksesibilitas
