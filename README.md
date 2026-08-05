@@ -8,22 +8,21 @@ Klik dua kali `index.html`, atau buka lewat browser (Chrome/Edge/Firefox). Tidak
 
 ## Checklist yang perlu diedit
 
-Template ini sengaja dibuat **simpel** — tanpa kartu status hero, angka statistik, atau section pengalaman kerja/testimoni, karena belum relevan untuk profil mahasiswa/otodidak. Yang sudah terisi: nama (Bima Sangkur), bio, dan data kontak (email/WA/lokasi).
+Template ini sengaja dibuat **simpel** — hanya 4 bagian (Tentang, Keahlian, Proyek, Kontak), tanpa statistik, kartu status, pengalaman kerja, atau testimoni, karena belum relevan untuk profil mahasiswa/otodidak. Yang sudah terisi: nama, bio, dan semua data kontak.
 
 Sisa yang masih perlu diisi (cari komentar `<!-- EDIT: ... -->` di `index.html`):
 
-- [ ] **Skill** — daftar teknologi di 3 kartu (Frontend, Backend, Tools) — sesuaikan dengan yang benar-benar sudah dipelajari
-- [ ] **3 kartu proyek** — sekarang isinya contoh ide proyek latihan (To-Do List, Landing Page, Cek Cuaca). Ganti dengan proyek yang benar-benar sudah/akan kamu buat, plus link "Live Demo" & "Kode Sumber" aslinya
-- [ ] **GitHub / LinkedIn** — sudah diarahkan ke akunmu, cek lagi apakah URL-nya sudah benar
-- [ ] **CV** — taruh file PDF CV kamu di folder ini, lalu ganti `href="cv-anda.pdf"` sesuai nama filenya
+- [ ] **Keahlian** — isinya sekarang perkiraan (HTML/CSS/JS/Git di "Sudah dipakai", React/Tailwind/Node.js di "Lagi dipelajari"). Sesuaikan dengan kondisi sebenarnya. Lebih baik sedikit tapi jujur daripada banyak tapi belum dikuasai
+- [ ] **3 kartu proyek** — sekarang isinya contoh ide proyek latihan (To-Do List, Landing Page, Cek Cuaca). Ganti dengan proyek yang benar-benar sudah kamu buat, lalu isi link "Live Demo" & "Kode Sumber" (sekarang masih `href="#"`)
+- [ ] **LinkedIn** — cek `https://linkedin.com/in/bimasangkur6` sudah benar atau belum. Kalau belum punya LinkedIn, hapus saja tautannya di bagian hero
 
-## Catatan penting: form kontak
+## Soal form kontak
 
-Form di section "Kontak" saat ini **belum terhubung ke layanan pengiriman email** — kalau ada yang isi form, pesannya tidak benar-benar terkirim ke mana pun. Untuk mengaktifkannya, pilih salah satu:
+Sebelumnya ada form "Kirim Pesan" di section Kontak, tapi **sudah dihapus** karena form itu tidak benar-benar mengirim apa pun — pengunjung akan dapat pesan "terima kasih" padahal pesannya hilang begitu saja.
 
-1. **Formspree** (termudah, gratis untuk pemakaian ringan) — daftar di [formspree.io](https://formspree.io), ganti atribut form jadi `action="https://formspree.io/f/xxxxxxx" method="POST"`, hapus `id="contactForm"` dan handler JS di bagian bawah `<script>` (blok `Contact form (front-end only)`).
-2. **EmailJS** — kirim email langsung dari browser tanpa backend, cocok kalau mau tetap pakai JavaScript yang sudah ada.
-3. **Backend sendiri** — kalau kamu punya server (Node.js/PHP/dll), arahkan `fetch()` di JavaScript ke endpoint API kamu.
+Gantinya sekarang: daftar kontak yang bisa langsung diklik (email membuka aplikasi email, WhatsApp membuka chat). Ini lebih sederhana dan benar-benar berfungsi.
+
+Kalau nanti tetap mau pakai form beneran, cara termudah adalah [Formspree](https://formspree.io) — gratis untuk pemakaian ringan, tinggal daftar dan pasang `action` di tag `<form>`.
 
 ## Deploy (gratis)
 

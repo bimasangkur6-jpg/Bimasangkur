@@ -12,8 +12,8 @@
      TOKENS
      ============================================================ */
   :root{
-    --bg:#FFFFFF;
-    --bg-alt:#F6F7F8;
+    --bg:#FCFCFD;
+    --bg-alt:#F4F6F8;
     --bg-elevated:#FFFFFF;
     --text:#1F2328;
     --text-muted:#5B6570;
@@ -24,8 +24,6 @@
     --accent-hover:#1F56C4;
     --accent-soft:rgba(47,111,237,0.10);
     --shadow:rgba(20,24,32,0.08);
-    --success:#2F8F4E;
-    --danger:#D14343;
 
     --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 
@@ -65,8 +63,8 @@
     --shadow:rgba(0,0,0,0.4);
   }
   :root[data-theme="light"]{
-    --bg:#FFFFFF;
-    --bg-alt:#F6F7F8;
+    --bg:#FCFCFD;
+    --bg-alt:#F4F6F8;
     --bg-elevated:#FFFFFF;
     --text:#1F2328;
     --text-muted:#5B6570;
@@ -98,9 +96,8 @@
   a{color:inherit;text-decoration:none;}
   ul{margin:0;padding:0;list-style:none;}
   h1,h2,h3,h4,p{margin:0;}
-  h1,h2,h3,h4{font-family:var(--font);text-wrap:balance;font-weight:700;}
+  h1,h2,h3,h4{text-wrap:balance;font-weight:700;}
   button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
-  input,textarea{font:inherit;color:inherit;}
   section{scroll-margin-top:var(--header-h);}
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 
@@ -110,18 +107,10 @@
     padding-inline:clamp(1.25rem,4vw,3rem);
   }
 
-  .eyebrow{
-    display:inline-block;
-    font-size:.9rem;
-    color:var(--accent);
-    font-weight:600;
-  }
-
   .section-head{
     margin-bottom:clamp(2rem,4vw,3rem);
   }
-  .section-head .eyebrow{margin-bottom:.6rem;}
-  .section-title{font-size:clamp(1.75rem,2.4vw + 1rem,2.6rem);font-weight:700;}
+  .section-title{font-size:clamp(1.6rem,2vw + 1rem,2.2rem);font-weight:700;}
   .section-intro{
     max-width:60ch;
     color:var(--text-muted);
@@ -139,7 +128,6 @@
     align-items:center;
     gap:.5rem;
     padding:.85rem 1.6rem;
-    font-family:var(--font);
     font-size:.95rem;
     font-weight:600;
     border-radius:var(--radius);
@@ -151,11 +139,9 @@
   .btn--primary:hover{background:var(--accent-hover);transform:translateY(-1px);}
   .btn--outline{border-color:var(--border-strong);color:var(--text);}
   .btn--outline:hover{border-color:var(--accent);color:var(--accent);}
-  .btn--sm{padding:.6rem 1.15rem;font-size:.85rem;}
 
   .text-link{
     position:relative;
-    font-family:var(--font);
     font-size:.9rem;
     color:var(--text-muted);
     padding-bottom:2px;
@@ -182,11 +168,7 @@
   }
   .header.is-scrolled{border-bottom-color:var(--border);}
   .header__inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
-  .logo{
-    font-family:var(--font);
-    font-size:1.25rem;
-    font-weight:700;
-  }
+  .logo{font-size:1.25rem;font-weight:700;}
   .logo span{color:var(--accent);}
   .nav__list{display:flex;gap:clamp(1.2rem,2vw,2.2rem);}
   .nav__link{
@@ -225,29 +207,27 @@
   /* ============================================================
      HERO
      ============================================================ */
-  .hero{padding-block:clamp(2.5rem,6vw,4.5rem) clamp(3.5rem,7vw,5.5rem);}
-  .hero__content{max-width:640px;}
-  .hero__content .eyebrow{margin-bottom:1.1rem;}
+  .hero{padding-block:clamp(3rem,7vw,5rem) clamp(3.5rem,7vw,5.5rem);}
+  .hero__content{max-width:600px;}
   .hero__content h1{
-    font-size:clamp(2.4rem,3vw + 1.5rem,4rem);
-    line-height:1.1;
-    margin-bottom:.6rem;
+    font-size:clamp(2.2rem,3vw + 1.2rem,3.2rem);
+    line-height:1.15;
+    margin-bottom:.5rem;
   }
   .hero__role{
-    font-family:var(--font);
-    font-size:clamp(1rem,1.2vw + .6rem,1.15rem);
+    font-size:1.05rem;
     color:var(--accent);
     font-weight:600;
-    margin-bottom:1.4rem;
+    margin-bottom:1.2rem;
   }
   .hero__desc{
     max-width:52ch;
-    font-size:1.08rem;
+    font-size:1.05rem;
     color:var(--text-muted);
-    margin-bottom:2.2rem;
+    margin-bottom:2rem;
   }
-  .hero__cta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.6rem;}
-  .hero__social{display:flex;flex-wrap:wrap;gap:1.6rem;padding-top:1.6rem;border-top:1px solid var(--border);}
+  .hero__cta{display:flex;flex-wrap:wrap;gap:.85rem;margin-bottom:2rem;}
+  .hero__social{display:flex;flex-wrap:wrap;gap:1.4rem;}
 
   /* ============================================================
      ABOUT
@@ -260,12 +240,14 @@
   /* ============================================================
      SKILLS
      ============================================================ */
-  .skills__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
-  .skill-card{border:1px solid var(--border);border-radius:var(--radius);padding:1.9rem;background:var(--bg-elevated);}
-  .skill-card h3{font-size:1.1rem;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
+  .skills__grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;
+    max-width:800px;
+  }
+  .skill-card{border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;background:var(--bg-elevated);}
+  .skill-card h3{font-size:1rem;margin-bottom:1rem;color:var(--text-muted);}
   .tags{display:flex;flex-wrap:wrap;gap:.5rem;}
   .tag{
-    font-family:var(--font);
     font-size:.85rem;
     font-weight:500;
     padding:.35rem .85rem;
@@ -295,32 +277,17 @@
   /* ============================================================
      CONTACT
      ============================================================ */
-  .contact__inner{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2.5rem,5vw,5rem);}
-  .contact__info p.section-intro{margin-bottom:2rem;}
-  .contact__list{display:flex;flex-direction:column;}
-  .contact__list li{
-    display:flex;justify-content:space-between;gap:1rem;
-    padding-block:1rem;border-top:1px solid var(--border);
-  }
+  .contact__list{max-width:620px;}
+  .contact__list li{border-top:1px solid var(--border);}
   .contact__list li:last-child{border-bottom:1px solid var(--border);}
-  .contact__list .label{font-size:.9rem;color:var(--text-faint);}
-  .contact__list .value{font-weight:600;}
-
-  .form-row{margin-bottom:1.7rem;}
-  .form-row label{
-    display:block;font-size:.9rem;font-weight:500;
-    color:var(--text-muted);margin-bottom:.5rem;
+  .contact__row{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding-block:1.05rem;
   }
-  .form-row input,.form-row textarea{
-    width:100%;background:transparent;border:0;border-bottom:1px solid var(--border-strong);
-    padding:.6rem 0;color:var(--text);font-size:1rem;resize:vertical;
-    transition:border-color .25s var(--ease);
-  }
-  .form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--accent);}
-  .form-row textarea{min-height:100px;}
-  .form-status{font-size:.9rem;margin-top:1rem;min-height:1.2em;}
-  .form-status.success{color:var(--success);}
-  .form-status.error{color:var(--danger);}
+  .contact__row .label{font-size:.9rem;color:var(--text-faint);}
+  .contact__row .value{font-weight:600;text-align:right;word-break:break-word;}
+  a.contact__row{transition:color .25s var(--ease);}
+  a.contact__row:hover .value{color:var(--accent);}
 
   /* ============================================================
      FOOTER
@@ -354,9 +321,6 @@
   /* ============================================================
      RESPONSIVE
      ============================================================ */
-  @media (max-width:900px){
-    .contact__inner{grid-template-columns:1fr;}
-  }
   @media (max-width:760px){
     .nav{
       position:fixed;top:var(--header-h);left:0;right:0;bottom:0;
@@ -389,8 +353,7 @@
       </ul>
     </nav>
     <div class="header__actions">
-      <button class="icon-btn" id="themeToggle" aria-label="Ganti tema terang/gelap" type="button">◐</button>
-      <a href="#contact" class="btn btn--primary btn--sm">Hubungi Saya</a>
+      <button class="icon-btn" id="themeToggle" aria-label="Ganti tema terang/gelap" type="button">☾</button>
       <button class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false" type="button">
         <span></span><span></span><span></span>
       </button>
@@ -404,20 +367,19 @@
   <section class="hero" id="home">
     <div class="container">
       <div class="hero__content">
-        <p class="eyebrow hero-load" style="animation-delay:.05s">Portofolio</p>
-        <h1 class="hero-load" style="animation-delay:.15s">Bima Sangkur</h1>
-        <p class="hero__role hero-load" style="animation-delay:.25s">Mahasiswa, belajar coding otodidak</p>
-        <p class="hero__desc hero-load" style="animation-delay:.35s">
+        <h1 class="hero-load" style="animation-delay:.05s">Bima Sangkur</h1>
+        <p class="hero__role hero-load" style="animation-delay:.15s">Mahasiswa, belajar coding otodidak</p>
+        <p class="hero__desc hero-load" style="animation-delay:.25s">
           Saya mahasiswa yang lagi belajar bikin website sendiri, di luar jurusan kuliah. HTML, CSS, dan JavaScript saya pelajari dari kursus online dan tutorial, terus saya coba praktikkan lewat proyek-proyek kecil.
         </p>
-        <div class="hero__cta hero-load" style="animation-delay:.45s">
-          <a href="#projects" class="btn btn--primary">Lihat Proyek Saya</a>
-          <a href="cv-anda.pdf" class="btn btn--outline" download><!-- EDIT: ganti dengan file CV kamu -->Unduh CV</a>
+        <div class="hero__cta hero-load" style="animation-delay:.35s">
+          <a href="#projects" class="btn btn--primary">Lihat Proyek</a>
+          <a href="#contact" class="btn btn--outline">Hubungi Saya</a>
         </div>
-        <div class="hero__social hero-load" style="animation-delay:.55s">
-          <a href="https://github.com/bimasangkur6-jpg" class="text-link" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://linkedin.com/in/bimasangkur6" class="text-link" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a href="mailto:bimasangkur6@gmail.com" class="text-link">Email ↗</a>
+        <div class="hero__social hero-load" style="animation-delay:.45s">
+          <a href="https://github.com/bimasangkur6-jpg" class="text-link" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/bimasangkur6" class="text-link" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:bimasangkur6@gmail.com" class="text-link">Email</a>
         </div>
       </div>
     </div>
@@ -427,7 +389,6 @@
   <section class="about" id="about">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Tentang</p>
         <h2 class="section-title">Tentang Saya</h2>
       </div>
       <div class="about__text reveal">
@@ -446,33 +407,24 @@
   <section class="skills" id="skills">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Keahlian</p>
-        <h2 class="section-title">Yang Sedang Saya Pelajari</h2>
+        <h2 class="section-title">Keahlian</h2>
       </div>
       <div class="skills__grid">
         <div class="skill-card reveal">
-          <h3>Frontend</h3>
+          <h3>Sudah dipakai</h3>
           <div class="tags">
-            <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
-            <span class="tag">React</span><span class="tag">Vue.js</span><span class="tag">Tailwind CSS</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Git</span>
           </div>
         </div>
         <div class="skill-card reveal">
-          <h3>Backend</h3>
+          <h3>Lagi dipelajari</h3>
           <div class="tags">
-            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PHP</span>
-            <span class="tag">REST API</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>Tools &amp; Infrastruktur</h3>
-          <div class="tags">
-            <span class="tag">Git</span><span class="tag">Docker</span><span class="tag">Figma</span>
-            <span class="tag">CI/CD</span><span class="tag">Linux</span><span class="tag">AWS</span>
+            <span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Node.js</span>
           </div>
         </div>
       </div>
-      <!-- EDIT: sesuaikan daftar skill di atas dengan keahlianmu -->
+      <!-- EDIT: isi hanya yang benar-benar pernah kamu pakai. Lebih baik sedikit tapi jujur
+           daripada banyak tapi belum dikuasai — itu ketahuan pas ditanya saat wawancara. -->
     </div>
   </section>
 
@@ -480,7 +432,6 @@
   <section class="projects" id="projects">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Portofolio</p>
         <h2 class="section-title">Proyek</h2>
         <p class="section-intro">Proyek-proyek kecil yang saya buat buat latihan.</p>
       </div>
@@ -493,8 +444,8 @@
             <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
           </div>
           <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo ↗</a>
-            <a href="#" class="text-link">Kode Sumber ↗</a>
+            <a href="#" class="text-link">Live Demo</a>
+            <a href="#" class="text-link">Kode Sumber</a>
           </div>
         </article>
 
@@ -505,8 +456,8 @@
             <span class="tag">HTML</span><span class="tag">CSS</span>
           </div>
           <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo ↗</a>
-            <a href="#" class="text-link">Kode Sumber ↗</a>
+            <a href="#" class="text-link">Live Demo</a>
+            <a href="#" class="text-link">Kode Sumber</a>
           </div>
         </article>
 
@@ -517,8 +468,8 @@
             <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Fetch API</span>
           </div>
           <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo ↗</a>
-            <a href="#" class="text-link">Kode Sumber ↗</a>
+            <a href="#" class="text-link">Live Demo</a>
+            <a href="#" class="text-link">Kode Sumber</a>
           </div>
         </article>
 
@@ -529,33 +480,33 @@
 
   <!-- ============ CONTACT ============ -->
   <section class="contact" id="contact">
-    <div class="container contact__inner">
-      <div class="contact__info reveal">
-        <p class="eyebrow">Kontak</p>
+    <div class="container">
+      <div class="section-head reveal">
         <h2 class="section-title">Hubungi Saya</h2>
-        <p class="section-intro">Mau kontak saya atau sekadar say hi, bisa isi form ini atau lewat kontak di bawah.</p>
-        <ul class="contact__list">
-          <li><span class="label">Email</span><span class="value">bimasangkur6@gmail.com</span></li>
-          <li><span class="label">Telepon / WA</span><span class="value">+62 822-2785-7908</span></li>
-          <li><span class="label">Lokasi</span><span class="value">Indonesia</span></li>
-        </ul>
+        <p class="section-intro">Kalau mau tanya, ngobrol, atau kasih masukan, boleh langsung kontak lewat mana aja di bawah.</p>
       </div>
-      <form class="contact__form reveal" id="contactForm">
-        <div class="form-row">
-          <label for="name">Nama</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email">
-        </div>
-        <div class="form-row">
-          <label for="message">Pesan</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary">Kirim Pesan</button>
-        <p class="form-status" id="formStatus" role="status"></p>
-      </form>
+      <ul class="contact__list reveal">
+        <li>
+          <a class="contact__row" href="mailto:bimasangkur6@gmail.com">
+            <span class="label">Email</span><span class="value">bimasangkur6@gmail.com</span>
+          </a>
+        </li>
+        <li>
+          <a class="contact__row" href="https://wa.me/6282227857908" target="_blank" rel="noopener">
+            <span class="label">WhatsApp</span><span class="value">+62 822-2785-7908</span>
+          </a>
+        </li>
+        <li>
+          <a class="contact__row" href="https://github.com/bimasangkur6-jpg" target="_blank" rel="noopener">
+            <span class="label">GitHub</span><span class="value">@bimasangkur6-jpg</span>
+          </a>
+        </li>
+        <li>
+          <div class="contact__row">
+            <span class="label">Lokasi</span><span class="value">Indonesia</span>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -586,7 +537,7 @@
     return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
   function updateToggleLabel(){
-    themeToggle.textContent = currentTheme() === "dark" ? "☀" : "◐";
+    themeToggle.textContent = currentTheme() === "dark" ? "☀" : "☾";
   }
   updateToggleLabel();
   themeToggle.addEventListener("click", function(){
@@ -659,24 +610,6 @@
   }
   onScrollSpy();
   window.addEventListener("scroll", onScrollSpy, { passive: true });
-
-  /* ---------- Contact form (front-end only) ---------- */
-  var form = document.getElementById("contactForm");
-  var status = document.getElementById("formStatus");
-  form.addEventListener("submit", function(e){
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      status.textContent = "Mohon lengkapi semua kolom dengan benar.";
-      status.className = "form-status error";
-      return;
-    }
-    // CATATAN: form ini belum terhubung ke layanan pengiriman email apa pun.
-    // Hubungkan ke layanan seperti Formspree, EmailJS, atau backend milikmu sendiri
-    // agar pesan benar-benar terkirim.
-    status.textContent = "Terima kasih! Pesan kamu berhasil disiapkan (hubungkan form ini ke layanan email untuk pengiriman sungguhan).";
-    status.className = "form-status success";
-    form.reset();
-  });
 
 })();
 </script>
