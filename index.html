@@ -20,6 +20,7 @@
     --glass:rgba(255,255,255,.6);
     --glass-border:rgba(255,255,255,.7);
     --shadow:rgba(20,22,26,.10);
+    --accent-glow:rgba(47,95,208,.35);
     --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 
     /* EDIT: kalau mau pakai Google Fonts (Sora + Inter) alih-alih font sistem,
@@ -40,6 +41,7 @@
       --accent-2:#4A6FD1;
       --accent-3:#9A8CF5;
       --accent-soft:#1C2433;
+      --accent-glow:rgba(126,166,240,.3);
       --glass:rgba(28,31,38,.55);
       --glass-border:rgba(255,255,255,.08);
       --shadow:rgba(0,0,0,.45);
@@ -61,32 +63,6 @@
   h1,h2,p,dl,dd{margin:0;}
   a{color:inherit;}
 
-  /* ---------- Ambient background ---------- */
-  .bg-decor{
-    position:fixed;
-    inset:0;
-    z-index:-1;
-    overflow:hidden;
-    pointer-events:none;
-  }
-  .bg-decor span{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(70px);
-    opacity:.5;
-  }
-  .bg-decor span:nth-child(1){
-    width:420px;height:420px;
-    top:-160px;left:-120px;
-    background:radial-gradient(circle, var(--accent-2), transparent 70%);
-  }
-  .bg-decor span:nth-child(2){
-    width:380px;height:380px;
-    top:280px;right:-160px;
-    background:radial-gradient(circle, var(--accent-3), transparent 70%);
-    opacity:.35;
-  }
-
   .page{
     position:relative;
     max-width:36rem;
@@ -95,6 +71,36 @@
     display:flex;
     flex-direction:column;
     gap:1.5rem;
+  }
+
+  /* ---------- Ambient background ----------
+     Diposisikan relatif ke .page (kolom konten), bukan ke layar —
+     supaya glow-nya selalu menempel di tepi konten, di layar
+     selebar apa pun. Kalau dipatok ke sudut layar, di layar lebar
+     dia lepas jauh dari kolom konten yang sempit di tengah. */
+  .bg-decor{
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    overflow:visible;
+    pointer-events:none;
+  }
+  .bg-decor span{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.55;
+  }
+  .bg-decor span:nth-child(1){
+    width:340px;height:340px;
+    top:-80px;left:-160px;
+    background:radial-gradient(circle, var(--accent-2), transparent 70%);
+  }
+  .bg-decor span:nth-child(2){
+    width:320px;height:320px;
+    top:32%;right:-170px;
+    background:radial-gradient(circle, var(--accent-3), transparent 70%);
+    opacity:.4;
   }
 
   /* ---------- Intro ---------- */
@@ -120,7 +126,7 @@
     font-weight:800;
     letter-spacing:-.02em;
     line-height:1.15;
-    background:linear-gradient(100deg, var(--text) 40%, var(--accent));
+    background:linear-gradient(90deg, var(--text), var(--accent-2));
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
@@ -159,7 +165,7 @@
     border-color:var(--accent);
     color:var(--accent);
     transform:translateY(-2px);
-    box-shadow:0 10px 20px -12px var(--accent);
+    box-shadow:0 10px 20px -10px var(--accent-glow);
   }
 
   /* ---------- Sections (glass card blocks) ---------- */
@@ -239,9 +245,8 @@
 </head>
 <body>
 
-<div class="bg-decor" aria-hidden="true"><span></span><span></span></div>
-
 <div class="page">
+  <div class="bg-decor" aria-hidden="true"><span></span><span></span></div>
 
   <header class="intro reveal">
     <!-- EDIT: kalau mau pakai foto, ganti div di bawah dengan:
