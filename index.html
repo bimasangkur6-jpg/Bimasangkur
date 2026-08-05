@@ -10,28 +10,36 @@
 <style>
   :root{
     --bg:#FFFFFF;
-    --text:#17191C;
-    --muted:#6A7280;
-    --border:#E8EAED;
+    --bg-alt:#F5F7FB;
+    --text:#181A1E;
+    --muted:#6B7280;
+    --border:#E7E9EE;
     --accent:#2F5FD0;
-    --accent-soft:#EDF2FC;
+    --accent-2:#6C8EE8;
+    --accent-soft:#EAF0FC;
+    --shadow:rgba(23,26,30,.08);
     --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --bg:#16181C;
-      --text:#E6E7E9;
-      --muted:#9AA0A8;
-      --border:#2A2D33;
+      --bg:#15171B;
+      --bg-alt:#1D2026;
+      --text:#E7E8EA;
+      --muted:#9BA1AA;
+      --border:#2B2E35;
       --accent:#7EA6F0;
+      --accent-2:#4A6FD1;
       --accent-soft:#1E2634;
+      --shadow:rgba(0,0,0,.4);
     }
   }
 
   *,*::before,*::after{box-sizing:border-box;}
   body{
     margin:0;
-    background:var(--bg);
+    background:
+      radial-gradient(560px 320px at 12% -8%, var(--accent-soft), transparent 60%),
+      var(--bg);
     color:var(--text);
     font-family:var(--font);
     font-size:17px;
@@ -44,84 +52,108 @@
   .page{
     max-width:36rem;
     margin-inline:auto;
-    padding:clamp(3rem,9vw,5rem) 1.5rem;
+    padding:clamp(3rem,9vw,5rem) 1.5rem clamp(3.5rem,8vw,5rem);
     display:flex;
     flex-direction:column;
-    gap:2.75rem;
+    gap:1.5rem;
   }
 
   /* ---------- Intro ---------- */
+  .intro{padding-bottom:.5rem;}
   .avatar{
-    width:68px;height:68px;
+    width:88px;height:88px;
     border-radius:50%;
-    background:var(--accent-soft);
-    color:var(--accent);
+    background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    color:#fff;
     display:flex;align-items:center;justify-content:center;
-    font-size:1.35rem;font-weight:700;letter-spacing:.02em;
+    font-size:1.6rem;font-weight:700;letter-spacing:.02em;
+    box-shadow:0 12px 28px -10px var(--shadow);
     margin-bottom:1.5rem;
   }
   h1{
-    font-size:1.8rem;
+    font-size:clamp(1.9rem,4vw,2.3rem);
     font-weight:700;
-    letter-spacing:-.015em;
-    line-height:1.2;
+    letter-spacing:-.02em;
+    line-height:1.15;
   }
   .role{
-    color:var(--muted);
-    margin-top:.35rem;
-    margin-bottom:1.25rem;
+    color:var(--accent);
+    font-weight:600;
+    margin-top:.4rem;
+    margin-bottom:1.4rem;
   }
   .intro p + p{margin-top:.9rem;}
 
   .links{
     display:flex;
     flex-wrap:wrap;
-    gap:1.25rem;
-    margin-top:1.75rem;
+    gap:.65rem;
+    margin-top:1.85rem;
   }
   .links a{
+    display:inline-flex;
+    align-items:center;
+    padding:.55rem 1.15rem;
+    border-radius:999px;
+    background:var(--bg-alt);
+    border:1px solid var(--border);
+    font-size:.9rem;
+    font-weight:600;
     text-decoration:none;
-    border-bottom:1px solid var(--border);
-    padding-bottom:2px;
-    transition:color .2s,border-color .2s;
+    transition:background .2s,border-color .2s,color .2s,transform .2s;
   }
   .links a:hover,.links a:focus-visible{
+    background:var(--accent-soft);
+    border-color:var(--accent);
     color:var(--accent);
-    border-bottom-color:var(--accent);
+    transform:translateY(-1px);
   }
 
-  /* ---------- Sections ---------- */
-  section{
-    border-top:1px solid var(--border);
-    padding-top:2.25rem;
+  /* ---------- Sections (card blocks) ---------- */
+  .block{
+    background:var(--bg-alt);
+    border-radius:20px;
+    padding:1.75rem 1.85rem;
   }
   h2{
-    font-size:1.05rem;
+    font-size:1rem;
     font-weight:700;
-    margin-bottom:1.1rem;
+    margin-bottom:1.15rem;
   }
   .note{color:var(--muted);}
 
   /* ---------- Keahlian ---------- */
-  .skills{
-    display:grid;
-    grid-template-columns:auto 1fr;
-    gap:.7rem 1.5rem;
+  .skill-group + .skill-group{margin-top:1.1rem;}
+  .skill-group dt{
+    font-size:.8rem;
+    font-weight:600;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    margin-bottom:.55rem;
   }
-  .skills dt{color:var(--muted);white-space:nowrap;}
+  .skill-group dd{
+    display:flex;flex-wrap:wrap;gap:.5rem;
+  }
+  .pill{
+    display:inline-block;
+    padding:.3rem .75rem;
+    border-radius:999px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    font-size:.85rem;
+    font-weight:600;
+  }
 
   /* ---------- Footer ---------- */
   footer{
-    border-top:1px solid var(--border);
-    padding-top:2rem;
     color:var(--muted);
-    font-size:.9375rem;
+    font-size:.9rem;
+    padding-top:.5rem;
   }
 
   @media (max-width:420px){
-    .skills{grid-template-columns:1fr;gap:.25rem 0;}
-    .skills dt{margin-top:.6rem;}
-    .skills dt:first-child{margin-top:0;}
+    .block{padding:1.5rem;border-radius:16px;}
   }
 </style>
 </head>
@@ -131,7 +163,7 @@
 
   <header class="intro">
     <!-- EDIT: kalau mau pakai foto, ganti div di bawah dengan:
-         <img class="avatar" src="foto.jpg" alt="Foto Bima Sangkur"> -->
+         <img class="avatar" src="foto.jpg" alt="Foto Bima Sangkur" style="object-fit:cover;"> -->
     <div class="avatar" aria-hidden="true">BS</div>
 
     <h1>Bima Sangkur</h1>
@@ -153,19 +185,32 @@
     </nav>
   </header>
 
-  <section>
+  <section class="block">
     <h2>Keahlian</h2>
     <!-- EDIT: isi hanya yang benar-benar pernah dipakai.
          Lebih baik sedikit tapi jujur — ini yang ditanya saat wawancara. -->
-    <dl class="skills">
-      <dt>Sudah dipakai</dt>
-      <dd>HTML, CSS, JavaScript, Git</dd>
-      <dt>Lagi dipelajari</dt>
-      <dd>React, Tailwind CSS, Node.js</dd>
+    <dl>
+      <div class="skill-group">
+        <dt>Sudah dipakai</dt>
+        <dd>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Git</span>
+        </dd>
+      </div>
+      <div class="skill-group">
+        <dt>Lagi dipelajari</dt>
+        <dd>
+          <span class="pill">React</span>
+          <span class="pill">Tailwind CSS</span>
+          <span class="pill">Node.js</span>
+        </dd>
+      </div>
     </dl>
   </section>
 
-  <section>
+  <section class="block">
     <h2>Proyek</h2>
     <p class="note">Belum ada yang saya pajang. Lagi dikerjakan, nanti saya tambahkan.</p>
 
@@ -184,7 +229,7 @@
          Tambahkan juga CSS ini di dalam <style>:
 
     .projects{margin:0;padding:0;list-style:none;display:grid;gap:.85rem;}
-    .projects a{font-weight:600;}
+    .projects a{font-weight:600;color:var(--accent);}
 
          Kalau belum ada repo atau demo, tulis nama proyeknya sebagai
          teks biasa tanpa <a>. Jangan pasang link yang tidak mengarah
