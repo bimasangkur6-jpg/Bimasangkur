@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nama Anda — Full-Stack Web Developer</title>
-<meta name="description" content="Portofolio Nama Anda, Full-Stack Web Developer. Lihat proyek, keahlian, dan pengalaman kerja.">
+<title>Bima Sangkur — Web Developer</title>
+<meta name="description" content="Portofolio Bima Sangkur, mahasiswa yang belajar web development secara otodidak. Lihat proyek dan keahlian yang sedang dipelajari.">
 <meta name="theme-color" content="#10192B">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2310192B'/%3E%3Ctext x='50' y='68' font-size='54' fill='%23C99A52' text-anchor='middle' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2310192B'/%3E%3Ctext x='50' y='68' font-size='54' fill='%23C99A52' text-anchor='middle' font-family='Georgia,serif'%3EB%3C/text%3E%3C/svg%3E">
 <style>
   /* ============================================================
      TOKENS
@@ -398,33 +398,6 @@
   .project-card__links{display:flex;gap:1.6rem;padding-top:1.3rem;border-top:1px solid var(--border);}
 
   /* ============================================================
-     EXPERIENCE
-     ============================================================ */
-  .timeline{border-left:1px solid var(--border);}
-  .timeline-item{position:relative;padding:0 0 3rem 2.2rem;}
-  .timeline-item:last-child{padding-bottom:0;}
-  .timeline-item::before{
-    content:"";position:absolute;left:-5px;top:.35rem;
-    width:9px;height:9px;border-radius:50%;
-    background:var(--bg);border:2px solid var(--accent-strong);
-  }
-  .timeline-item__date{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-faint);margin-bottom:.5rem;}
-  .timeline-item h3{font-size:1.25rem;margin-bottom:.2rem;}
-  .timeline-item__company{color:var(--accent-strong);font-weight:600;font-size:.95rem;margin-bottom:.9rem;}
-  .timeline-item ul{display:flex;flex-direction:column;gap:.5rem;}
-  .timeline-item li{color:var(--text-muted);font-size:.96rem;padding-left:1.1rem;position:relative;}
-  .timeline-item li::before{content:"—";position:absolute;left:0;color:var(--text-faint);}
-
-  /* ============================================================
-     TESTIMONIALS
-     ============================================================ */
-  .testimonials__grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-  .quote-card{border:1px solid var(--border);border-radius:8px;padding:2.2rem;background:var(--bg-elevated);}
-  .quote-card p{font-family:var(--font-display);font-size:1.15rem;line-height:1.6;color:var(--text);margin-bottom:1.5rem;}
-  .quote-card__author{font-family:var(--font-mono);font-size:.8rem;color:var(--text-faint);}
-  .quote-card__author strong{display:block;color:var(--text-muted);font-family:var(--font-body);font-size:.95rem;margin-bottom:.15rem;}
-
-  /* ============================================================
      CONTACT
      ============================================================ */
   .contact__inner{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2.5rem,5vw,5rem);}
@@ -489,7 +462,7 @@
   @media (max-width:900px){
     .hero__inner,.about__grid,.contact__inner{grid-template-columns:1fr;}
     .hero__visual{order:-1;max-width:380px;margin-inline:auto;width:100%;}
-    .skills__grid,.projects__grid,.testimonials__grid{grid-template-columns:1fr;}
+    .skills__grid,.projects__grid{grid-template-columns:1fr;}
   }
   @media (max-width:760px){
     .nav{
@@ -513,13 +486,12 @@
 
 <header class="header" id="header">
   <div class="container header__inner">
-    <a href="#home" class="logo">Nama Anda<span>.</span></a>
+    <a href="#home" class="logo">Bima Sangkur<span>.</span></a>
     <nav class="nav" id="nav">
       <ul class="nav__list">
         <li><a href="#about" class="nav__link">Tentang</a></li>
         <li><a href="#skills" class="nav__link">Keahlian</a></li>
         <li><a href="#projects" class="nav__link">Proyek</a></li>
-        <li><a href="#experience" class="nav__link">Pengalaman</a></li>
         <li><a href="#contact" class="nav__link">Kontak</a></li>
       </ul>
     </nav>
@@ -540,10 +512,10 @@
     <div class="container hero__inner">
       <div class="hero__content">
         <p class="eyebrow hero-load" style="animation-delay:.05s">Portofolio — Web Developer</p>
-        <h1 class="hero-load" style="animation-delay:.15s"><!-- EDIT: nama lengkap kamu -->Nama Anda</h1>
-        <p class="hero__role hero-load" style="animation-delay:.25s"><!-- EDIT: peran/jabatan -->Full-Stack Web Developer</p>
+        <h1 class="hero-load" style="animation-delay:.15s">Bima Sangkur</h1>
+        <p class="hero__role hero-load" style="animation-delay:.25s">Mahasiswa &amp; Web Developer Otodidak</p>
         <p class="hero__desc hero-load" style="animation-delay:.35s">
-          Saya merancang dan membangun aplikasi web dari ujung ke ujung — antarmuka yang rapi di sisi pengguna, dan sistem yang stabil di sisi server. Fokus pada kode yang bersih, performa, dan pengalaman pengguna yang terasa mulus.
+          Saya mahasiswa yang belajar pengembangan web secara otodidak, di luar jurusan kuliah saya. HTML, CSS, JavaScript, dan tools lain saya pelajari sendiri lewat kursus online, dokumentasi, dan tutorial — lalu dipraktikkan lewat proyek-proyek kecil.
         </p>
         <div class="hero__cta hero-load" style="animation-delay:.45s">
           <a href="#projects" class="btn btn--primary">Lihat Proyek Saya</a>
@@ -552,19 +524,19 @@
         <div class="hero__social hero-load" style="animation-delay:.55s">
           <a href="https://github.com/username" class="text-link" target="_blank" rel="noopener">GitHub ↗</a>
           <a href="https://linkedin.com/in/username" class="text-link" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a href="mailto:email@contoh.com" class="text-link">Email ↗</a>
+          <a href="mailto:bimasangkur6@gmail.com" class="text-link">Email ↗</a>
         </div>
       </div>
       <div class="hero__visual hero-load" style="animation-delay:.3s">
         <div class="id-card">
           <div class="id-card__top">
-            <div class="id-card__mono">NA</div>
-            <div class="id-card__status"><span class="id-card__dot"></span>Tersedia untuk proyek</div>
+            <div class="id-card__mono">BS</div>
+            <div class="id-card__status"><span class="id-card__dot"></span>Terbuka untuk Magang</div>
           </div>
-          <div class="id-card__row"><span class="id-card__label">Lokasi</span><span class="id-card__value"><!-- EDIT -->Indonesia (Remote)</span></div>
+          <div class="id-card__row"><span class="id-card__label">Lokasi</span><span class="id-card__value">Indonesia</span></div>
           <div class="id-card__row"><span class="id-card__label">Fokus</span><span class="id-card__value">Web Application</span></div>
-          <div class="id-card__row"><span class="id-card__label">Pengalaman</span><span class="id-card__value">3+ Tahun</span></div>
-          <div class="id-card__row"><span class="id-card__label">Bahasa</span><span class="id-card__value">ID / EN</span></div>
+          <div class="id-card__row"><span class="id-card__label">Status</span><span class="id-card__value">Mahasiswa</span></div>
+          <div class="id-card__row"><span class="id-card__label">Belajar</span><span class="id-card__value">Otodidak</span></div>
         </div>
       </div>
     </div>
@@ -580,27 +552,28 @@
       <div class="about__grid">
         <div class="about__text reveal">
           <p>
-            Saya seorang <strong>Full-Stack Web Developer</strong> dengan pengalaman membangun produk digital, mulai dari situs company profile sederhana sampai aplikasi web berskala tim. Saya senang menerjemahkan kebutuhan bisnis menjadi sistem yang jelas, terstruktur, dan mudah dikembangkan lebih lanjut.
+            Saya <strong>mahasiswa</strong> yang belajar pengembangan web secara <strong>otodidak</strong> — bukan dari jurusan kuliah, tapi dari ketertarikan pribadi. Saya mempelajari HTML, CSS, dan JavaScript secara mandiri lewat kursus online, dokumentasi, dan tutorial, lalu mempraktikkannya lewat proyek-proyek kecil.
           </p>
           <p>
-            Di luar coding, saya tertarik pada desain sistem, praktik <strong>clean code</strong>, dan terus belajar tools baru. Saya terbiasa bekerja dalam tim lintas fungsi menggunakan alur kerja Agile, dan senang berdiskusi soal arsitektur maupun detail antarmuka.
+            Saya masih dalam tahap belajar, tapi serius dan konsisten mengembangkan diri. Terbuka untuk kesempatan <strong>magang</strong>, proyek kolaborasi, maupun masukan dari siapa pun yang lebih berpengalaman.
           </p>
-          <!-- EDIT: ganti dua paragraf di atas dengan cerita & pengalamanmu sendiri -->
+          <!-- EDIT: tambahkan cerita/latar belakang tambahan kalau mau -->
         </div>
         <div class="stats reveal">
           <div class="stat">
-            <span class="stat__num" data-count="3">0</span><span class="stat__suffix">+</span>
-            <p>Tahun Pengalaman</p>
+            <span class="stat__num" data-count="1">0</span><span class="stat__suffix">+</span>
+            <p>Tahun Belajar Otodidak</p>
           </div>
           <div class="stat">
-            <span class="stat__num" data-count="25">0</span><span class="stat__suffix">+</span>
-            <p>Proyek Selesai</p>
+            <span class="stat__num" data-count="4">0</span>
+            <p>Proyek Portofolio</p>
           </div>
           <div class="stat">
-            <span class="stat__num" data-count="15">0</span><span class="stat__suffix">+</span>
-            <p>Klien &amp; Tim Puas</p>
+            <span class="stat__num" data-count="10">0</span><span class="stat__suffix">+</span>
+            <p>Teknologi Dipelajari</p>
           </div>
         </div>
+        <!-- EDIT: sesuaikan angka data-count di atas dengan kondisi kamu sebenarnya -->
       </div>
     </div>
   </section>
@@ -610,7 +583,7 @@
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow">Keahlian</p>
-        <h2 class="section-title">Tools &amp; teknologi yang saya <em>kuasai</em></h2>
+        <h2 class="section-title">Tools &amp; teknologi yang sedang saya <em>pelajari</em></h2>
       </div>
       <div class="skills__grid">
         <div class="skill-card reveal">
@@ -645,7 +618,7 @@
       <div class="section-head reveal">
         <p class="eyebrow">Portofolio</p>
         <h2 class="section-title">Proyek <em>terbaru</em></h2>
-        <p class="section-intro">Beberapa proyek yang pernah saya kerjakan, dari sistem internal sampai aplikasi yang dipakai publik.</p>
+        <p class="section-intro">Beberapa proyek yang saya kerjakan secara mandiri untuk berlatih dan mengasah kemampuan coding.</p>
       </div>
       <div class="projects__grid">
 
@@ -718,67 +691,6 @@
     </div>
   </section>
 
-  <!-- ============ EXPERIENCE ============ -->
-  <section class="experience" id="experience">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Pengalaman</p>
-        <h2 class="section-title">Perjalanan <em>karier</em></h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <p class="timeline-item__date">2023 — Sekarang</p>
-          <h3>Full-Stack Developer</h3>
-          <p class="timeline-item__company"><!-- EDIT -->PT Nama Perusahaan Anda</p>
-          <ul>
-            <li>Memimpin pengembangan ulang platform internal, meningkatkan kecepatan halaman sebesar 40%.</li>
-            <li>Membangun dan memelihara REST API yang digunakan oleh 3 tim produk.</li>
-            <li>Membimbing 2 developer junior dalam praktik code review dan testing.</li>
-          </ul>
-        </div>
-        <div class="timeline-item reveal">
-          <p class="timeline-item__date">2021 — 2023</p>
-          <h3>Frontend Developer</h3>
-          <p class="timeline-item__company">Startup Teknologi XYZ</p>
-          <ul>
-            <li>Mengembangkan komponen UI reusable dengan React &amp; TypeScript.</li>
-            <li>Berkolaborasi dengan tim desain untuk implementasi design system.</li>
-          </ul>
-        </div>
-        <div class="timeline-item reveal">
-          <p class="timeline-item__date">2020 — 2021</p>
-          <h3>Junior Web Developer (Magang)</h3>
-          <p class="timeline-item__company">Agensi Digital ABC</p>
-          <ul>
-            <li>Membantu membangun 10+ website landing page untuk klien UMKM.</li>
-          </ul>
-        </div>
-      </div>
-      <!-- EDIT: ganti dengan riwayat pekerjaan/magang kamu sendiri -->
-    </div>
-  </section>
-
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Testimoni</p>
-        <h2 class="section-title">Kata mereka yang pernah <em>bekerja sama</em></h2>
-      </div>
-      <div class="testimonials__grid">
-        <div class="quote-card reveal">
-          <p>"Sangat teliti dan komunikatif. Setiap requirement dieksekusi dengan rapi, bahkan sering memberi masukan yang bikin produk jadi lebih baik."</p>
-          <div class="quote-card__author"><strong>Nama Rekan Kerja</strong>Product Manager, Perusahaan X</div>
-        </div>
-        <div class="quote-card reveal">
-          <p>"Salah satu developer paling bisa diandalkan yang pernah saya ajak kerja. Deadline selalu terjaga tanpa mengorbankan kualitas kode."</p>
-          <div class="quote-card__author"><strong>Nama Klien</strong>Founder, Startup Y</div>
-        </div>
-      </div>
-      <!-- EDIT: ganti dengan testimoni asli, atau hapus section ini jika belum punya -->
-    </div>
-  </section>
-
   <!-- ============ CONTACT ============ -->
   <section class="contact" id="contact">
     <div class="container contact__inner">
@@ -787,11 +699,10 @@
         <h2 class="section-title">Mari <em>berkolaborasi</em></h2>
         <p class="section-intro">Tertarik bekerja sama atau sekadar ingin diskusi soal proyek? Kirim pesan, saya akan balas secepatnya.</p>
         <ul class="contact__list">
-          <li><span class="label">Email</span><span class="value">email@contoh.com</span></li>
-          <li><span class="label">Telepon / WA</span><span class="value">+62 812-3456-7890</span></li>
-          <li><span class="label">Lokasi</span><span class="value">Indonesia (Remote)</span></li>
+          <li><span class="label">Email</span><span class="value">bimasangkur6@gmail.com</span></li>
+          <li><span class="label">Telepon / WA</span><span class="value">+62 822-2785-7908</span></li>
+          <li><span class="label">Lokasi</span><span class="value">Indonesia</span></li>
         </ul>
-        <!-- EDIT: ganti data kontak di atas dengan data kamu -->
       </div>
       <form class="contact__form reveal" id="contactForm">
         <div class="form-row">
@@ -816,7 +727,7 @@
 
 <footer class="footer">
   <div class="container footer__inner">
-    <p>© <span id="year"></span> Nama Anda. Dibuat dengan HTML, CSS &amp; JavaScript murni.</p>
+    <p>© <span id="year"></span> Bima Sangkur. Dibuat dengan HTML, CSS &amp; JavaScript murni.</p>
     <button class="back-to-top" id="backToTop" type="button">Kembali ke atas ↑</button>
   </div>
 </footer>
