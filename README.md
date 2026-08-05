@@ -10,7 +10,11 @@ Klik dua kali `index.html`. Tidak perlu server atau instalasi apa pun.
 
 Isi halamannya memang sedikit — nama, dua paragraf, daftar keahlian, kontak. Kalau kerangkanya besar (navigasi sticky, kartu kaca/blur, gradasi warna-warni), yang terlihat malah kesenjangan antara "banyak hiasan" dan "sedikit isi".
 
-Jadi halaman ini dibuat satu kolom (38rem), tanpa navigasi, gaya "catatan kerja": font monospace untuk label/meta (peran, tombol kontak, footer), font biasa untuk teks yang dibaca, antar-bagian dipisah garis tipis (bukan kartu), dan tekstur titik-titik halus di latar biar tidak terasa kosong. Satu warna aksen (hijau lumut) dipakai konsisten, tanpa gradasi atau blur.
+Jadi halaman ini dibuat tanpa navigasi, gaya "catatan kerja": font monospace untuk label/meta (peran, tombol kontak, footer), font biasa untuk teks yang dibaca, antar-bagian dipisah garis tipis (bukan kartu), dan tekstur titik-titik halus di latar biar tidak terasa kosong. Satu warna aksen (hijau lumut) dipakai konsisten, tanpa gradasi atau blur.
+
+**Layout-nya menyesuaikan lebar layar:**
+- Di bawah 880px (HP, tablet) — satu kolom, ditumpuk dari atas ke bawah.
+- Di atas 880px (laptop, desktop) — dua kolom: profil nempel di kiri (ikut ke-scroll/sticky), isi (Keahlian, Proyek) di kanan. Supaya layar laptop terisi dengan wajar, bukan satu kolom sempit yang dikelilingi ruang kosong.
 
 Sudah dicek tampilannya di lebar layar 320px sampai 1920px (HP kecil sampai layar lebar), termasuk mode terang dan gelap — mode gelap mengikuti pengaturan sistem secara otomatis, tanpa tombol.
 

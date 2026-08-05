@@ -55,13 +55,45 @@
     margin-inline:auto;
     padding:clamp(2.75rem,9vw,4.5rem) clamp(1.25rem,5vw,1.75rem) clamp(3rem,8vw,4.5rem);
   }
-  .page > * + *{
+  .page > .intro + .content{
     margin-top:clamp(2.75rem,7vw,3.75rem);
   }
-  .page > section,
-  .page > footer{
+  .content > * + *{
+    margin-top:clamp(2.75rem,7vw,3.75rem);
+  }
+  .content > section,
+  .content > footer{
     padding-top:clamp(1.75rem,4vw,2.25rem);
     border-top:1px solid var(--border);
+  }
+
+  /* ---------- Layout lebar (laptop/desktop) ----------
+     Di bawah 880px: satu kolom, ditumpuk (fokus ke keterbacaan HP/tablet).
+     Di atas 880px: dua kolom pakai flexbox — profil nempel di kiri
+     (sticky), isi di kanan — supaya layar laptop/desktop terisi,
+     bukan cuma satu kolom sempit dikelilingi ruang kosong.
+     (Sengaja flexbox, bukan grid: kalau pakai grid dan sidebar
+     di-span ke semua baris, tinggi baris ikut memelar mengikuti
+     tinggi sidebar — bikin jarak antar-section kanan jadi aneh.
+     Flexbox dengan align-items:flex-start tidak punya masalah itu.) */
+  @media (min-width:880px){
+    .page{
+      max-width:72rem;
+      padding-inline:clamp(2rem,4vw,3.5rem);
+      display:flex;
+      align-items:flex-start;
+      gap:clamp(3rem,6vw,5rem);
+    }
+    .page > .intro{
+      flex:0 0 20rem;
+      position:sticky;
+      top:clamp(2.5rem,6vw,4rem);
+    }
+    .page > .intro + .content{
+      margin-top:0;
+      flex:1 1 auto;
+      min-width:0;
+    }
   }
 
   /* ---------- Intro ---------- */
@@ -203,6 +235,8 @@
     </nav>
   </header>
 
+  <div class="content">
+
   <section class="reveal">
     <h2>Keahlian</h2>
     <!-- EDIT: isi hanya yang benar-benar pernah dipakai.
@@ -258,6 +292,8 @@
   <footer class="reveal">
     <p>Indonesia &middot; &copy; <span id="year"></span> Bima Sangkur</p>
   </footer>
+
+  </div>
 
 </div>
 
