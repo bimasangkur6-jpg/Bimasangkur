@@ -8,20 +8,15 @@ Klik dua kali `index.html`, atau buka lewat browser (Chrome/Edge/Firefox). Tidak
 
 ## Checklist yang perlu diedit
 
-Cari komentar `<!-- EDIT: ... -->` di dalam `index.html` — semua ada di bagian ini:
+Sudah terisi: nama (Bima Sangkur), bio, kartu ID di hero, statistik, dan data kontak (email/WA/lokasi). Section "Pengalaman Kerja" & "Testimoni" sengaja dihapus dulu karena belum relevan — tinggal tambah lagi kalau nanti sudah ada magang/proyek nyata dengan klien.
 
-- [ ] **Nama** — ganti semua kemunculan "Nama Anda" (judul tab, header, hero, footer)
-- [ ] **Peran/jabatan** — "Full-Stack Web Developer" di hero
-- [ ] **Bio** — 2 paragraf di bagian "Tentang Saya"
-- [ ] **Kartu ID di hero** — lokasi, fokus, pengalaman, bahasa
-- [ ] **Statistik** — angka tahun pengalaman / proyek / klien (atribut `data-count`)
-- [ ] **Skill** — daftar teknologi di 3 kartu (Frontend, Backend, Tools)
+Sisa yang masih perlu diisi (cari komentar `<!-- EDIT: ... -->` di `index.html`):
+
+- [ ] **Skill** — daftar teknologi di 3 kartu (Frontend, Backend, Tools) — sesuaikan dengan yang benar-benar sudah dipelajari
 - [ ] **4 kartu proyek** — judul, deskripsi, tech tag, link "Live Demo" & "Kode Sumber"
-- [ ] **Pengalaman kerja** — 3 entri linimasa (tanggal, jabatan, perusahaan, pencapaian)
-- [ ] **Testimoni** — 2 kutipan (atau hapus section `#testimonials` kalau belum punya)
-- [ ] **Kontak** — email, nomor WA, lokasi di section kontak & tautan `mailto:`
 - [ ] **GitHub / LinkedIn** — ganti `https://github.com/username` dan `https://linkedin.com/in/username`
 - [ ] **CV** — taruh file PDF CV kamu di folder ini, lalu ganti `href="cv-anda.pdf"` sesuai nama filenya
+- [ ] **Statistik** — angka di `data-count` (tahun belajar, jumlah proyek, teknologi) masih perkiraan, sesuaikan kalau berubah
 
 ## Catatan penting: form kontak
 
