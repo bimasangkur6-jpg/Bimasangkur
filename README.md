@@ -13,8 +13,26 @@ Template ini sengaja dibuat **simpel** — hanya 4 bagian (Tentang, Keahlian, Pr
 Sisa yang masih perlu diisi (cari komentar `<!-- EDIT: ... -->` di `index.html`):
 
 - [ ] **Keahlian** — isinya sekarang perkiraan (HTML/CSS/JS/Git di "Sudah dipakai", React/Tailwind/Node.js di "Lagi dipelajari"). Sesuaikan dengan kondisi sebenarnya. Lebih baik sedikit tapi jujur daripada banyak tapi belum dikuasai
-- [ ] **3 kartu proyek** — sekarang isinya contoh ide proyek latihan (To-Do List, Landing Page, Cek Cuaca). Ganti dengan proyek yang benar-benar sudah kamu buat, lalu isi link "Live Demo" & "Kode Sumber" (sekarang masih `href="#"`)
+- [ ] **Proyek** — bagian ini sengaja dikosongkan (lihat bagian bawah)
 - [ ] **LinkedIn** — cek `https://linkedin.com/in/bimasangkur6` sudah benar atau belum. Kalau belum punya LinkedIn, hapus saja tautannya di bagian hero
+
+## Cara menambah proyek
+
+Bagian "Proyek" sekarang kosong dan cuma menampilkan catatan bahwa proyeknya masih dikerjakan. Ini disengaja: **portofolio jujur tanpa proyek lebih baik daripada portofolio berisi proyek yang tidak ada.**
+
+Di dalam `index.html`, cari `<!-- CARA MENAMBAH PROYEK -->`. Di situ sudah ada template kartu proyek lengkap di dalam komentar — tinggal disalin keluar dan diisi.
+
+Aturan soal link demo/kode:
+
+| Kondisi | Yang dipasang |
+|---|---|
+| Kode di GitHub + sudah dihosting | Dua-duanya |
+| Kode ada, tapi belum/tidak bisa didemokan | Kode Sumber saja |
+| Belum ada apa-apa | Hapus seluruh blok link |
+
+Jangan pernah membiarkan `href="#"` — link yang diklik tapi tidak melakukan apa-apa membuat halaman terlihat belum jadi.
+
+**Ide proyek pertama:** website portofolio ini sendiri sudah sah dihitung sebagai proyek — kodenya ada di GitHub. Selain itu, To-Do List app, kalkulator, atau aplikasi cuaca (latihan pakai API) adalah proyek pemula yang umum dan cukup untuk menunjukkan dasar-dasarnya. Semua bisa dihosting gratis di GitHub Pages, sama seperti situs ini.
 
 ## Soal form kontak
 

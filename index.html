@@ -274,6 +274,15 @@
   .project-card .tags{margin-bottom:1.5rem;}
   .project-card__links{display:flex;gap:1.6rem;padding-top:1.3rem;border-top:1px solid var(--border);}
 
+  .empty-note{
+    grid-column:1/-1;
+    max-width:52ch;
+    color:var(--text-muted);
+    border:1px dashed var(--border-strong);
+    border-radius:var(--radius);
+    padding:1.5rem 1.75rem;
+  }
+
   /* ============================================================
      CONTACT
      ============================================================ */
@@ -433,48 +442,43 @@
     <div class="container">
       <div class="section-head reveal">
         <h2 class="section-title">Proyek</h2>
-        <p class="section-intro">Proyek-proyek kecil yang saya buat buat latihan.</p>
+        <!-- Kalau proyeknya sudah ada, boleh tambahkan kalimat pengantar di sini, misalnya:
+             <p class="section-intro">Proyek-proyek kecil yang saya buat buat latihan.</p> -->
       </div>
       <div class="projects__grid">
 
+        <p class="empty-note reveal">Belum ada proyek yang saya pajang di sini. Sekarang lagi saya kerjakan — nanti saya tambahkan kalau sudah jadi.</p>
+
+        <!-- ============================================================
+             CARA MENAMBAH PROYEK
+             ============================================================
+             1. Hapus <p class="empty-note"> di atas.
+             2. Salin blok <article> di bawah ini (yang di dalam komentar),
+                tempel di sini, lalu ganti isinya.
+             3. Untuk tiap proyek tambahan, salin lagi blok yang sama.
+
+             CATATAN soal link:
+             - Kalau belum ada demo/repo, HAPUS <a> yang bersangkutan.
+               Jangan biarkan href="#" — link mati bikin halaman terlihat
+               belum jadi.
+             - Kalau kedua link belum ada, hapus seluruh
+               <div class="project-card__links">.
+
         <article class="project-card reveal">
-          <h3>To-Do List App</h3>
-          <p>Aplikasi daftar tugas yang simpel. Bisa tambah, centang, sama hapus tugas. Datanya tersimpan di browser (localStorage), jadi nggak hilang kalau di-refresh.</p>
+          <h3>Nama Proyek</h3>
+          <p>Satu-dua kalimat: aplikasi ini buat apa, dan bagian apa yang kamu pelajari saat membuatnya.</p>
           <div class="tags">
             <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
           </div>
           <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo</a>
-            <a href="#" class="text-link">Kode Sumber</a>
+            <a href="https://username.github.io/nama-repo/" class="text-link" target="_blank" rel="noopener">Live Demo</a>
+            <a href="https://github.com/username/nama-repo" class="text-link" target="_blank" rel="noopener">Kode Sumber</a>
           </div>
         </article>
 
-        <article class="project-card reveal">
-          <h3>Landing Page Responsif</h3>
-          <p>Halaman satu halaman buat latihan layout pakai Flexbox dan Grid. Tampilannya menyesuaikan di HP, tablet, sama desktop.</p>
-          <div class="tags">
-            <span class="tag">HTML</span><span class="tag">CSS</span>
-          </div>
-          <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo</a>
-            <a href="#" class="text-link">Kode Sumber</a>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <h3>Aplikasi Cek Cuaca</h3>
-          <p>Latihan ambil data dari API cuaca. Tinggal cari nama kota, terus muncul suhu sama kondisi cuacanya sekarang.</p>
-          <div class="tags">
-            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Fetch API</span>
-          </div>
-          <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo</a>
-            <a href="#" class="text-link">Kode Sumber</a>
-          </div>
-        </article>
+             ============================================================ -->
 
       </div>
-      <!-- EDIT: ini contoh ide proyek latihan — ganti dengan proyek yang benar-benar sudah/akan kamu buat -->
     </div>
   </section>
 
