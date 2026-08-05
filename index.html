@@ -274,12 +274,7 @@
      HERO
      ============================================================ */
   .hero{padding-block:clamp(3rem,7vw,5.5rem) clamp(4rem,8vw,6rem);}
-  .hero__inner{
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:clamp(2.5rem,5vw,4rem);
-    align-items:center;
-  }
+  .hero__content{max-width:640px;}
   .hero__content .eyebrow{margin-bottom:1.3rem;}
   .hero__content h1{
     font-size:clamp(2.6rem,3vw + 1.6rem,4.4rem);
@@ -302,68 +297,18 @@
   .hero__cta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.6rem;}
   .hero__social{display:flex;flex-wrap:wrap;gap:1.6rem;padding-top:1.6rem;border-top:1px solid var(--border);}
 
-  .hero__visual{display:flex;justify-content:center;}
-  .id-card{
-    width:100%;
-    max-width:340px;
-    background:var(--bg-panel);
-    background-image:
-      repeating-linear-gradient(0deg, var(--panel-border) 0px, transparent 1px, transparent 32px),
-      repeating-linear-gradient(90deg, var(--panel-border) 0px, transparent 1px, transparent 32px);
-    color:var(--panel-text);
-    border-radius:8px;
-    padding:2.2rem 1.9rem;
-    box-shadow:0 20px 50px -12px var(--shadow);
-  }
-  .id-card__top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.8rem;}
-  .id-card__mono{
-    display:flex;align-items:center;justify-content:center;
-    width:64px;height:64px;
-    border:1px solid var(--panel-border);
-    border-radius:6px;
-    font-family:var(--font-display);
-    font-size:1.6rem;
-    font-weight:700;
-    color:var(--accent);
-  }
-  .id-card__status{
-    display:flex;align-items:center;gap:.5rem;
-    font-family:var(--font-mono);
-    font-size:.72rem;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--panel-text-muted);
-  }
-  .id-card__dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 3px rgba(74,222,128,.2);}
-  .id-card__row{
-    display:flex;justify-content:space-between;gap:1rem;
-    padding-block:.85rem;
-    border-top:1px solid var(--panel-border);
-    font-size:.88rem;
-  }
-  .id-card__row:last-child{border-bottom:1px solid var(--panel-border);}
-  .id-card__label{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--panel-text-muted);}
-  .id-card__value{text-align:right;color:var(--panel-text);font-weight:500;}
-
   /* ============================================================
      ABOUT
      ============================================================ */
-  .about__grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2.5rem,5vw,4.5rem);}
+  .about__text{max-width:65ch;}
   .about__text p{color:var(--text-muted);margin-bottom:1.2rem;font-size:1.03rem;}
   .about__text p:last-child{margin-bottom:0;}
   .about__text strong{color:var(--text);font-weight:600;}
 
-  .stats{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg-elevated);}
-  .stat{padding:1.6rem 1.8rem;border-bottom:1px solid var(--border);}
-  .stat:last-child{border-bottom:none;}
-  .stat__num{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums;}
-  .stat__suffix{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--accent-strong);}
-  .stat p{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-faint);margin-top:.35rem;}
-
   /* ============================================================
      SKILLS
      ============================================================ */
-  .skills__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .skills__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
   .skill-card{border:1px solid var(--border);border-radius:8px;padding:1.9rem;background:var(--bg-elevated);}
   .skill-card h3{font-size:1.15rem;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
   .tags{display:flex;flex-wrap:wrap;gap:.55rem;}
@@ -379,7 +324,7 @@
   /* ============================================================
      PROJECTS
      ============================================================ */
-  .projects__grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+  .projects__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
   .project-card{
     border:1px solid var(--border);
     border-radius:8px;
@@ -389,9 +334,6 @@
     transition:border-color .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);
   }
   .project-card:hover{border-color:var(--border-strong);transform:translateY(-3px);box-shadow:0 16px 30px -18px var(--shadow);}
-  .project-card__top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.3rem;}
-  .project-card__cat{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-strong);}
-  .project-card__year{font-family:var(--font-mono);font-size:.78rem;color:var(--text-faint);}
   .project-card h3{font-size:1.3rem;margin-bottom:.7rem;}
   .project-card p{color:var(--text-muted);font-size:.96rem;margin-bottom:1.4rem;flex-grow:1;}
   .project-card .tags{margin-bottom:1.5rem;}
@@ -460,9 +402,7 @@
      RESPONSIVE
      ============================================================ */
   @media (max-width:900px){
-    .hero__inner,.about__grid,.contact__inner{grid-template-columns:1fr;}
-    .hero__visual{order:-1;max-width:380px;margin-inline:auto;width:100%;}
-    .skills__grid,.projects__grid{grid-template-columns:1fr;}
+    .contact__inner{grid-template-columns:1fr;}
   }
   @media (max-width:760px){
     .nav{
@@ -509,7 +449,7 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="home">
-    <div class="container hero__inner">
+    <div class="container">
       <div class="hero__content">
         <p class="eyebrow hero-load" style="animation-delay:.05s">Portofolio — Web Developer</p>
         <h1 class="hero-load" style="animation-delay:.15s">Bima Sangkur</h1>
@@ -522,21 +462,9 @@
           <a href="cv-anda.pdf" class="btn btn--outline" download><!-- EDIT: ganti dengan file CV kamu -->Unduh CV</a>
         </div>
         <div class="hero__social hero-load" style="animation-delay:.55s">
-          <a href="https://github.com/username" class="text-link" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://linkedin.com/in/username" class="text-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/bimasangkur6-jpg" class="text-link" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://linkedin.com/in/bimasangkur" class="text-link" target="_blank" rel="noopener">LinkedIn ↗</a>
           <a href="mailto:bimasangkur6@gmail.com" class="text-link">Email ↗</a>
-        </div>
-      </div>
-      <div class="hero__visual hero-load" style="animation-delay:.3s">
-        <div class="id-card">
-          <div class="id-card__top">
-            <div class="id-card__mono">BS</div>
-            <div class="id-card__status"><span class="id-card__dot"></span>Terbuka untuk Magang</div>
-          </div>
-          <div class="id-card__row"><span class="id-card__label">Lokasi</span><span class="id-card__value">Indonesia</span></div>
-          <div class="id-card__row"><span class="id-card__label">Fokus</span><span class="id-card__value">Web Application</span></div>
-          <div class="id-card__row"><span class="id-card__label">Status</span><span class="id-card__value">Mahasiswa</span></div>
-          <div class="id-card__row"><span class="id-card__label">Belajar</span><span class="id-card__value">Otodidak</span></div>
         </div>
       </div>
     </div>
@@ -549,31 +477,14 @@
         <p class="eyebrow">Tentang Saya</p>
         <h2 class="section-title">Berkenalan lebih <em>dekat</em></h2>
       </div>
-      <div class="about__grid">
-        <div class="about__text reveal">
-          <p>
-            Saya <strong>mahasiswa</strong> yang belajar pengembangan web secara <strong>otodidak</strong> — bukan dari jurusan kuliah, tapi dari ketertarikan pribadi. Saya mempelajari HTML, CSS, dan JavaScript secara mandiri lewat kursus online, dokumentasi, dan tutorial, lalu mempraktikkannya lewat proyek-proyek kecil.
-          </p>
-          <p>
-            Saya masih dalam tahap belajar, tapi serius dan konsisten mengembangkan diri. Terbuka untuk kesempatan <strong>magang</strong>, proyek kolaborasi, maupun masukan dari siapa pun yang lebih berpengalaman.
-          </p>
-          <!-- EDIT: tambahkan cerita/latar belakang tambahan kalau mau -->
-        </div>
-        <div class="stats reveal">
-          <div class="stat">
-            <span class="stat__num" data-count="1">0</span><span class="stat__suffix">+</span>
-            <p>Tahun Belajar Otodidak</p>
-          </div>
-          <div class="stat">
-            <span class="stat__num" data-count="4">0</span>
-            <p>Proyek Portofolio</p>
-          </div>
-          <div class="stat">
-            <span class="stat__num" data-count="10">0</span><span class="stat__suffix">+</span>
-            <p>Teknologi Dipelajari</p>
-          </div>
-        </div>
-        <!-- EDIT: sesuaikan angka data-count di atas dengan kondisi kamu sebenarnya -->
+      <div class="about__text reveal">
+        <p>
+          Saya <strong>mahasiswa</strong> yang belajar pengembangan web secara <strong>otodidak</strong> — bukan dari jurusan kuliah, tapi dari ketertarikan pribadi. Saya mempelajari HTML, CSS, dan JavaScript secara mandiri lewat kursus online, dokumentasi, dan tutorial, lalu mempraktikkannya lewat proyek-proyek kecil.
+        </p>
+        <p>
+          Saya masih dalam tahap belajar, tapi serius dan konsisten mengembangkan diri. Terbuka untuk kesempatan <strong>magang</strong>, proyek kolaborasi, maupun masukan dari siapa pun yang lebih berpengalaman.
+        </p>
+        <!-- EDIT: tambahkan cerita/latar belakang tambahan kalau mau -->
       </div>
     </div>
   </section>
@@ -623,14 +534,10 @@
       <div class="projects__grid">
 
         <article class="project-card reveal">
-          <div class="project-card__top">
-            <span class="project-card__cat">Internal Tool</span>
-            <span class="project-card__year">2024</span>
-          </div>
-          <h3>Sistem Manajemen Inventaris Gudang</h3>
-          <p>Aplikasi pelacakan stok berbasis web dengan pemindaian barcode, laporan otomatis, dan notifikasi stok menipis untuk tim operasional.</p>
+          <h3>To-Do List App</h3>
+          <p>Aplikasi daftar tugas sederhana untuk latihan manipulasi DOM — bisa tambah, centang, dan hapus tugas. Data tersimpan di browser lewat localStorage.</p>
           <div class="tags">
-            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
           </div>
           <div class="project-card__links">
             <a href="#" class="text-link">Live Demo ↗</a>
@@ -639,14 +546,10 @@
         </article>
 
         <article class="project-card reveal">
-          <div class="project-card__top">
-            <span class="project-card__cat">E-Commerce</span>
-            <span class="project-card__year">2023</span>
-          </div>
-          <h3>Platform E-Commerce "TokoKita"</h3>
-          <p>Toko online lengkap dengan katalog produk, keranjang belanja, integrasi payment gateway, dan dashboard admin untuk kelola pesanan.</p>
+          <h3>Landing Page Responsif</h3>
+          <p>Halaman satu-page untuk latihan tata letak dengan Flexbox &amp; Grid, dibuat supaya rapi di layar HP, tablet, maupun desktop.</p>
           <div class="tags">
-            <span class="tag">Next.js</span><span class="tag">Tailwind CSS</span><span class="tag">MongoDB</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span>
           </div>
           <div class="project-card__links">
             <a href="#" class="text-link">Live Demo ↗</a>
@@ -655,30 +558,10 @@
         </article>
 
         <article class="project-card reveal">
-          <div class="project-card__top">
-            <span class="project-card__cat">Dashboard</span>
-            <span class="project-card__year">2023</span>
-          </div>
-          <h3>Dashboard Analitik Penjualan Real-time</h3>
-          <p>Visualisasi data penjualan secara langsung menggunakan WebSocket, dengan grafik interaktif dan filter periode kustom.</p>
+          <h3>Aplikasi Cek Cuaca</h3>
+          <p>Latihan mengambil data dari API publik (fetch) dan menampilkannya di halaman — cari kota, lalu tampil suhu dan kondisi cuaca saat ini.</p>
           <div class="tags">
-            <span class="tag">Vue.js</span><span class="tag">Chart.js</span><span class="tag">Redis</span>
-          </div>
-          <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo ↗</a>
-            <a href="#" class="text-link">Kode Sumber ↗</a>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-card__top">
-            <span class="project-card__cat">Productivity</span>
-            <span class="project-card__year">2022</span>
-          </div>
-          <h3>Aplikasi Manajemen Tugas Tim</h3>
-          <p>Papan kanban drag-and-drop untuk kolaborasi tim, lengkap dengan notifikasi real-time dan riwayat aktivitas.</p>
-          <div class="tags">
-            <span class="tag">React</span><span class="tag">Firebase</span><span class="tag">DnD Kit</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Fetch API</span>
           </div>
           <div class="project-card__links">
             <a href="#" class="text-link">Live Demo ↗</a>
@@ -687,7 +570,7 @@
         </article>
 
       </div>
-      <!-- EDIT: ganti judul, deskripsi, tech tag, dan link tiap proyek dengan proyekmu sendiri -->
+      <!-- EDIT: ini contoh ide proyek latihan — ganti dengan proyek yang benar-benar sudah/akan kamu buat -->
     </div>
   </section>
 
@@ -806,36 +689,6 @@
       });
     }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
     revealEls.forEach(function(el){ revealObserver.observe(el); });
-  }
-
-  /* ---------- Animated counters ---------- */
-  var counters = document.querySelectorAll(".stat__num");
-  function animateCounter(el){
-    var target = parseInt(el.getAttribute("data-count"), 10) || 0;
-    if (reduceMotion) { el.textContent = target; return; }
-    var start = null;
-    var duration = 1200;
-    function step(ts){
-      if (!start) start = ts;
-      var progress = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target);
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  if ("IntersectionObserver" in window) {
-    var counterObserver = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(function(el){ counterObserver.observe(el); });
-  } else {
-    counters.forEach(animateCounter);
   }
 
   /* ---------- Scrollspy ---------- */

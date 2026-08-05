@@ -8,15 +8,14 @@ Klik dua kali `index.html`, atau buka lewat browser (Chrome/Edge/Firefox). Tidak
 
 ## Checklist yang perlu diedit
 
-Sudah terisi: nama (Bima Sangkur), bio, kartu ID di hero, statistik, dan data kontak (email/WA/lokasi). Section "Pengalaman Kerja" & "Testimoni" sengaja dihapus dulu karena belum relevan — tinggal tambah lagi kalau nanti sudah ada magang/proyek nyata dengan klien.
+Template ini sengaja dibuat **simpel** — tanpa kartu status hero, angka statistik, atau section pengalaman kerja/testimoni, karena belum relevan untuk profil mahasiswa/otodidak. Yang sudah terisi: nama (Bima Sangkur), bio, dan data kontak (email/WA/lokasi).
 
 Sisa yang masih perlu diisi (cari komentar `<!-- EDIT: ... -->` di `index.html`):
 
 - [ ] **Skill** — daftar teknologi di 3 kartu (Frontend, Backend, Tools) — sesuaikan dengan yang benar-benar sudah dipelajari
-- [ ] **4 kartu proyek** — judul, deskripsi, tech tag, link "Live Demo" & "Kode Sumber"
-- [ ] **GitHub / LinkedIn** — ganti `https://github.com/username` dan `https://linkedin.com/in/username`
+- [ ] **3 kartu proyek** — sekarang isinya contoh ide proyek latihan (To-Do List, Landing Page, Cek Cuaca). Ganti dengan proyek yang benar-benar sudah/akan kamu buat, plus link "Live Demo" & "Kode Sumber" aslinya
+- [ ] **GitHub / LinkedIn** — sudah diarahkan ke akunmu, cek lagi apakah URL-nya sudah benar
 - [ ] **CV** — taruh file PDF CV kamu di folder ini, lalu ganti `href="cv-anda.pdf"` sesuai nama filenya
-- [ ] **Statistik** — angka di `data-count` (tahun belajar, jumlah proyek, teknologi) masih perkiraan, sesuaikan kalau berubah
 
 ## Catatan penting: form kontak
 
@@ -46,7 +45,7 @@ portfolio-website/
 
 - Mode terang/gelap (ikut preferensi sistem, atau toggle manual — tersimpan di browser)
 - Navigasi aktif otomatis mengikuti scroll (scrollspy)
-- Animasi muncul saat scroll + angka statistik yang menghitung naik
+- Animasi muncul halus saat scroll
 - Menu mobile (hamburger) untuk layar kecil
 - Sepenuhnya responsif (HP, tablet, desktop)
 - Menghormati pengaturan "reduce motion" di OS untuk aksesibilitas
