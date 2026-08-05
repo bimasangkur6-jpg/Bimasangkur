@@ -6,13 +6,13 @@ Satu file (`index.html`), HTML + CSS murni. JavaScript-nya cuma satu baris untuk
 
 Klik dua kali `index.html`. Tidak perlu server atau instalasi apa pun.
 
-## Kenapa sesederhana ini
+## Kenapa desainnya seperti ini
 
-Isi halamannya memang sedikit — nama, dua paragraf, daftar keahlian, kontak. Kalau kerangkanya besar (navigasi sticky, animasi scroll, tombol tema, menu hamburger), yang terlihat malah kesenjangan antara "banyak hiasan" dan "sedikit isi".
+Isi halamannya memang sedikit — nama, dua paragraf, daftar keahlian, kontak. Kalau kerangkanya besar (navigasi sticky, kartu kaca/blur, gradasi warna-warni), yang terlihat malah kesenjangan antara "banyak hiasan" dan "sedikit isi".
 
-Jadi halaman ini dibuat satu kolom sempit (36rem), tanpa navigasi dan tanpa animasi. Isinya cukup satu-dua layar, jadi orang tinggal scroll.
+Jadi halaman ini dibuat satu kolom (38rem), tanpa navigasi, gaya "catatan kerja": font monospace untuk label/meta (peran, tombol kontak, footer), font biasa untuk teks yang dibaca, antar-bagian dipisah garis tipis (bukan kartu), dan tekstur titik-titik halus di latar biar tidak terasa kosong. Satu warna aksen (hijau lumut) dipakai konsisten, tanpa gradasi atau blur.
 
-Mode gelap tetap ada — mengikuti pengaturan sistem secara otomatis, tanpa tombol.
+Sudah dicek tampilannya di lebar layar 320px sampai 1920px (HP kecil sampai layar lebar), termasuk mode terang dan gelap — mode gelap mengikuti pengaturan sistem secara otomatis, tanpa tombol.
 
 ## Yang perlu diedit
 
