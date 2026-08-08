@@ -1,967 +1,126 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nama Anda — Full-Stack Web Developer</title>
-<meta name="description" content="Portofolio Nama Anda, Full-Stack Web Developer. Lihat proyek, keahlian, dan pengalaman kerja.">
-<meta name="theme-color" content="#10192B">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2310192B'/%3E%3Ctext x='50' y='68' font-size='54' fill='%23C99A52' text-anchor='middle' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
-<style>
-  /* ============================================================
-     TOKENS
-     ============================================================ */
-  :root{
-    --bg:#EEF0F3;
-    --bg-elevated:#FFFFFF;
-    --bg-panel:#10192B;
-    --bg-panel-elevated:#182236;
-    --text:#10192B;
-    --text-muted:#4B5568;
-    --text-faint:#7C8598;
-    --border:#D8DCE3;
-    --border-strong:#B7BEC9;
-    --accent:#A9762E;
-    --accent-strong:#8C5F22;
-    --accent-soft:rgba(169,118,46,0.12);
-    --btn-bg:#10192B;
-    --btn-text:#F5F4F0;
-    --btn-hover:#1C2740;
-    --panel-text:#F1EFE8;
-    --panel-text-muted:#A7AEC0;
-    --panel-border:rgba(241,239,232,0.16);
-    --shadow:rgba(16,24,40,0.10);
-    --success:#3F7A4E;
-    --danger:#B3432E;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bima Sangkur</title>
+  <meta name="description" content="Portofolio Bima Sangkur — Junior Web Developer & App Developer.">
+  <meta name="theme-color" content="#05070d">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
 
-    --font-display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-    --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --font-mono:ui-monospace,"SF Mono","Cascadia Code","Cascadia Mono",Consolas,"Liberation Mono",monospace;
-
-    --header-h:76px;
-    --radius:5px;
-    --ease:cubic-bezier(.22,.7,.2,1);
-  }
-
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#0B111D;
-      --bg-elevated:#121A2B;
-      --bg-panel:#070B14;
-      --bg-panel-elevated:#0E1626;
-      --text:#E8E6DE;
-      --text-muted:#A7AEC0;
-      --text-faint:#6E7690;
-      --border:#232D40;
-      --border-strong:#303C56;
-      --accent:#C99A52;
-      --accent-strong:#DDB876;
-      --accent-soft:rgba(201,154,82,0.14);
-      --btn-bg:#C99A52;
-      --btn-text:#10192B;
-      --btn-hover:#D9AD68;
-      --panel-text:#F1EFE8;
-      --panel-text-muted:#97A0B4;
-      --panel-border:rgba(241,239,232,0.12);
-      --shadow:rgba(0,0,0,0.45);
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#0B111D;
-    --bg-elevated:#121A2B;
-    --bg-panel:#070B14;
-    --bg-panel-elevated:#0E1626;
-    --text:#E8E6DE;
-    --text-muted:#A7AEC0;
-    --text-faint:#6E7690;
-    --border:#232D40;
-    --border-strong:#303C56;
-    --accent:#C99A52;
-    --accent-strong:#DDB876;
-    --accent-soft:rgba(201,154,82,0.14);
-    --btn-bg:#C99A52;
-    --btn-text:#10192B;
-    --btn-hover:#D9AD68;
-    --panel-text:#F1EFE8;
-    --panel-text-muted:#97A0B4;
-    --panel-border:rgba(241,239,232,0.12);
-    --shadow:rgba(0,0,0,0.45);
-  }
-  :root[data-theme="light"]{
-    --bg:#EEF0F3;
-    --bg-elevated:#FFFFFF;
-    --bg-panel:#10192B;
-    --bg-panel-elevated:#182236;
-    --text:#10192B;
-    --text-muted:#4B5568;
-    --text-faint:#7C8598;
-    --border:#D8DCE3;
-    --border-strong:#B7BEC9;
-    --accent:#A9762E;
-    --accent-strong:#8C5F22;
-    --accent-soft:rgba(169,118,46,0.12);
-    --btn-bg:#10192B;
-    --btn-text:#F5F4F0;
-    --btn-hover:#1C2740;
-    --panel-text:#F1EFE8;
-    --panel-text-muted:#A7AEC0;
-    --panel-border:rgba(241,239,232,0.16);
-    --shadow:rgba(16,24,40,0.10);
-  }
-
-  /* ============================================================
-     RESET & BASE
-     ============================================================ */
-  *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:var(--font-body);
-    font-size:16px;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-    transition:background .3s var(--ease),color .3s var(--ease);
-  }
-  img{max-width:100%;display:block;}
-  a{color:inherit;text-decoration:none;}
-  ul{margin:0;padding:0;list-style:none;}
-  h1,h2,h3,h4,p{margin:0;}
-  h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;font-weight:600;}
-  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
-  input,textarea{font:inherit;color:inherit;}
-  section{scroll-margin-top:var(--header-h);}
-  :focus-visible{outline:2px solid var(--accent-strong);outline-offset:3px;}
-
-  .container{
-    max-width:1180px;
-    margin-inline:auto;
-    padding-inline:clamp(1.25rem,4vw,3rem);
-  }
-
-  .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:.6em;
-    font-family:var(--font-mono);
-    font-size:.8rem;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--accent-strong);
-    font-weight:600;
-  }
-  .eyebrow::before{
-    content:"";
-    width:22px;height:1px;
-    background:var(--accent-strong);
-    display:inline-block;
-  }
-
-  .section-head{
-    margin-bottom:clamp(2.5rem,5vw,3.5rem);
-    padding-bottom:clamp(1.5rem,3vw,2rem);
-    border-bottom:1px solid var(--border);
-  }
-  .section-head .eyebrow{margin-bottom:.9rem;}
-  .section-title{font-size:clamp(1.75rem,2.4vw + 1rem,2.6rem);font-weight:600;}
-  .section-title em{font-style:normal;color:var(--accent-strong);}
-  .section-intro{
-    max-width:60ch;
-    color:var(--text-muted);
-    margin-top:.9rem;
-    font-size:1.05rem;
-  }
-
-  section{padding-block:clamp(4rem,8vw,6.5rem);}
-
-  /* ============================================================
-     BUTTONS & LINKS
-     ============================================================ */
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:.5rem;
-    padding:.85rem 1.6rem;
-    font-family:var(--font-body);
-    font-size:.95rem;
-    font-weight:600;
-    border-radius:var(--radius);
-    border:1px solid transparent;
-    transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease);
-    white-space:nowrap;
-  }
-  .btn--primary{background:var(--btn-bg);color:var(--btn-text);}
-  .btn--primary:hover{background:var(--btn-hover);transform:translateY(-1px);}
-  .btn--outline{border-color:var(--border-strong);color:var(--text);}
-  .btn--outline:hover{border-color:var(--accent-strong);color:var(--accent-strong);}
-  .btn--sm{padding:.6rem 1.15rem;font-size:.85rem;}
-
-  .text-link{
-    position:relative;
-    font-family:var(--font-mono);
-    font-size:.85rem;
-    letter-spacing:.03em;
-    color:var(--text-muted);
-    padding-bottom:2px;
-    background-image:linear-gradient(var(--accent-strong),var(--accent-strong));
-    background-size:0 1px;
-    background-position:0 100%;
-    background-repeat:no-repeat;
-    transition:background-size .3s var(--ease),color .3s var(--ease);
-  }
-  .text-link:hover{color:var(--text);background-size:100% 1px;}
-
-  /* ============================================================
-     HEADER
-     ============================================================ */
-  .header{
-    position:sticky;top:0;z-index:100;
-    height:var(--header-h);
-    display:flex;align-items:center;
-    background:color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-    border-bottom:1px solid transparent;
-    transition:border-color .3s var(--ease),height .3s var(--ease);
-  }
-  .header.is-scrolled{border-bottom-color:var(--border);}
-  .header__inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
-  .logo{
-    font-family:var(--font-display);
-    font-size:1.3rem;
-    font-weight:700;
-    letter-spacing:.02em;
-  }
-  .logo span{color:var(--accent-strong);}
-  .nav__list{display:flex;gap:clamp(1.2rem,2vw,2.2rem);}
-  .nav__link{
-    font-size:.85rem;
-    font-weight:600;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    color:var(--text-muted);
-    position:relative;
-    padding-bottom:4px;
-    transition:color .25s var(--ease);
-  }
-  .nav__link::after{
-    content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
-    background:var(--accent-strong);transition:width .25s var(--ease);
-  }
-  .nav__link.is-active,.nav__link:hover{color:var(--text);}
-  .nav__link.is-active::after,.nav__link:hover::after{width:100%;}
-
-  .header__actions{display:flex;align-items:center;gap:.85rem;}
-  .icon-btn{
-    width:38px;height:38px;
-    display:flex;align-items:center;justify-content:center;
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    font-size:1rem;
-    color:var(--text-muted);
-    transition:border-color .25s var(--ease),color .25s var(--ease);
-  }
-  .icon-btn:hover{border-color:var(--accent-strong);color:var(--accent-strong);}
-
-  .menu-toggle{display:none;width:38px;height:38px;flex-direction:column;justify-content:center;align-items:center;gap:5px;}
-  .menu-toggle span{width:20px;height:2px;background:var(--text);transition:transform .3s var(--ease),opacity .3s var(--ease);}
-  .menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .menu-toggle.is-open span:nth-child(2){opacity:0;}
-  .menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-  /* ============================================================
-     HERO
-     ============================================================ */
-  .hero{padding-block:clamp(3rem,7vw,5.5rem) clamp(4rem,8vw,6rem);}
-  .hero__inner{
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:clamp(2.5rem,5vw,4rem);
-    align-items:center;
-  }
-  .hero__content .eyebrow{margin-bottom:1.3rem;}
-  .hero__content h1{
-    font-size:clamp(2.6rem,3vw + 1.6rem,4.4rem);
-    line-height:1.05;
-    margin-bottom:.6rem;
-  }
-  .hero__role{
-    font-family:var(--font-mono);
-    font-size:clamp(1rem,1.2vw + .6rem,1.25rem);
-    color:var(--accent-strong);
-    font-weight:600;
-    margin-bottom:1.4rem;
-  }
-  .hero__desc{
-    max-width:52ch;
-    font-size:1.08rem;
-    color:var(--text-muted);
-    margin-bottom:2.2rem;
-  }
-  .hero__cta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.6rem;}
-  .hero__social{display:flex;flex-wrap:wrap;gap:1.6rem;padding-top:1.6rem;border-top:1px solid var(--border);}
-
-  .hero__visual{display:flex;justify-content:center;}
-  .id-card{
-    width:100%;
-    max-width:340px;
-    background:var(--bg-panel);
-    background-image:
-      repeating-linear-gradient(0deg, var(--panel-border) 0px, transparent 1px, transparent 32px),
-      repeating-linear-gradient(90deg, var(--panel-border) 0px, transparent 1px, transparent 32px);
-    color:var(--panel-text);
-    border-radius:8px;
-    padding:2.2rem 1.9rem;
-    box-shadow:0 20px 50px -12px var(--shadow);
-  }
-  .id-card__top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.8rem;}
-  .id-card__mono{
-    display:flex;align-items:center;justify-content:center;
-    width:64px;height:64px;
-    border:1px solid var(--panel-border);
-    border-radius:6px;
-    font-family:var(--font-display);
-    font-size:1.6rem;
-    font-weight:700;
-    color:var(--accent);
-  }
-  .id-card__status{
-    display:flex;align-items:center;gap:.5rem;
-    font-family:var(--font-mono);
-    font-size:.72rem;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--panel-text-muted);
-  }
-  .id-card__dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 3px rgba(74,222,128,.2);}
-  .id-card__row{
-    display:flex;justify-content:space-between;gap:1rem;
-    padding-block:.85rem;
-    border-top:1px solid var(--panel-border);
-    font-size:.88rem;
-  }
-  .id-card__row:last-child{border-bottom:1px solid var(--panel-border);}
-  .id-card__label{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--panel-text-muted);}
-  .id-card__value{text-align:right;color:var(--panel-text);font-weight:500;}
-
-  /* ============================================================
-     ABOUT
-     ============================================================ */
-  .about__grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2.5rem,5vw,4.5rem);}
-  .about__text p{color:var(--text-muted);margin-bottom:1.2rem;font-size:1.03rem;}
-  .about__text p:last-child{margin-bottom:0;}
-  .about__text strong{color:var(--text);font-weight:600;}
-
-  .stats{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg-elevated);}
-  .stat{padding:1.6rem 1.8rem;border-bottom:1px solid var(--border);}
-  .stat:last-child{border-bottom:none;}
-  .stat__num{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums;}
-  .stat__suffix{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--accent-strong);}
-  .stat p{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-faint);margin-top:.35rem;}
-
-  /* ============================================================
-     SKILLS
-     ============================================================ */
-  .skills__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-  .skill-card{border:1px solid var(--border);border-radius:8px;padding:1.9rem;background:var(--bg-elevated);}
-  .skill-card h3{font-size:1.15rem;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
-  .tags{display:flex;flex-wrap:wrap;gap:.55rem;}
-  .tag{
-    font-family:var(--font-mono);
-    font-size:.78rem;
-    padding:.4rem .7rem;
-    border:1px solid var(--border-strong);
-    border-radius:4px;
-    color:var(--text-muted);
-  }
-
-  /* ============================================================
-     PROJECTS
-     ============================================================ */
-  .projects__grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-  .project-card{
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:2rem;
-    background:var(--bg-elevated);
-    display:flex;flex-direction:column;
-    transition:border-color .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);
-  }
-  .project-card:hover{border-color:var(--border-strong);transform:translateY(-3px);box-shadow:0 16px 30px -18px var(--shadow);}
-  .project-card__top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.3rem;}
-  .project-card__cat{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-strong);}
-  .project-card__year{font-family:var(--font-mono);font-size:.78rem;color:var(--text-faint);}
-  .project-card h3{font-size:1.3rem;margin-bottom:.7rem;}
-  .project-card p{color:var(--text-muted);font-size:.96rem;margin-bottom:1.4rem;flex-grow:1;}
-  .project-card .tags{margin-bottom:1.5rem;}
-  .project-card__links{display:flex;gap:1.6rem;padding-top:1.3rem;border-top:1px solid var(--border);}
-
-  /* ============================================================
-     EXPERIENCE
-     ============================================================ */
-  .timeline{border-left:1px solid var(--border);}
-  .timeline-item{position:relative;padding:0 0 3rem 2.2rem;}
-  .timeline-item:last-child{padding-bottom:0;}
-  .timeline-item::before{
-    content:"";position:absolute;left:-5px;top:.35rem;
-    width:9px;height:9px;border-radius:50%;
-    background:var(--bg);border:2px solid var(--accent-strong);
-  }
-  .timeline-item__date{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-faint);margin-bottom:.5rem;}
-  .timeline-item h3{font-size:1.25rem;margin-bottom:.2rem;}
-  .timeline-item__company{color:var(--accent-strong);font-weight:600;font-size:.95rem;margin-bottom:.9rem;}
-  .timeline-item ul{display:flex;flex-direction:column;gap:.5rem;}
-  .timeline-item li{color:var(--text-muted);font-size:.96rem;padding-left:1.1rem;position:relative;}
-  .timeline-item li::before{content:"—";position:absolute;left:0;color:var(--text-faint);}
-
-  /* ============================================================
-     TESTIMONIALS
-     ============================================================ */
-  .testimonials__grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-  .quote-card{border:1px solid var(--border);border-radius:8px;padding:2.2rem;background:var(--bg-elevated);}
-  .quote-card p{font-family:var(--font-display);font-size:1.15rem;line-height:1.6;color:var(--text);margin-bottom:1.5rem;}
-  .quote-card__author{font-family:var(--font-mono);font-size:.8rem;color:var(--text-faint);}
-  .quote-card__author strong{display:block;color:var(--text-muted);font-family:var(--font-body);font-size:.95rem;margin-bottom:.15rem;}
-
-  /* ============================================================
-     CONTACT
-     ============================================================ */
-  .contact__inner{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2.5rem,5vw,5rem);}
-  .contact__info p.section-intro{margin-bottom:2rem;}
-  .contact__list{display:flex;flex-direction:column;}
-  .contact__list li{
-    display:flex;justify-content:space-between;gap:1rem;
-    padding-block:1rem;border-top:1px solid var(--border);
-  }
-  .contact__list li:last-child{border-bottom:1px solid var(--border);}
-  .contact__list .label{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);}
-  .contact__list .value{font-weight:600;}
-
-  .form-row{margin-bottom:1.7rem;}
-  .form-row label{
-    display:block;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;
-    color:var(--text-faint);margin-bottom:.6rem;
-  }
-  .form-row input,.form-row textarea{
-    width:100%;background:transparent;border:0;border-bottom:1px solid var(--border-strong);
-    padding:.6rem 0;color:var(--text);font-size:1rem;resize:vertical;
-    transition:border-color .25s var(--ease);
-  }
-  .form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--accent-strong);}
-  .form-row textarea{min-height:100px;}
-  .form-status{font-family:var(--font-mono);font-size:.85rem;margin-top:1rem;min-height:1.2em;}
-  .form-status.success{color:var(--success);}
-  .form-status.error{color:var(--danger);}
-
-  /* ============================================================
-     FOOTER
-     ============================================================ */
-  .footer{background:var(--bg-panel);color:var(--panel-text-muted);padding-block:2.2rem;}
-  .footer__inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-  .footer p{font-size:.85rem;}
-  .footer .back-to-top{
-    display:flex;align-items:center;gap:.5rem;
-    font-family:var(--font-mono);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;
-    color:var(--panel-text-muted);border:1px solid var(--panel-border);border-radius:var(--radius);
-    padding:.55rem 1rem;transition:border-color .25s var(--ease),color .25s var(--ease);
-  }
-  .footer .back-to-top:hover{color:var(--panel-text);border-color:var(--accent);}
-
-  /* ============================================================
-     REVEAL / MOTION
-     ============================================================ */
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
-  .reveal.is-visible{opacity:1;transform:translateY(0);}
-  .hero-load{opacity:0;transform:translateY(14px);animation:heroIn .8s var(--ease) forwards;}
-  @keyframes heroIn{to{opacity:1;transform:translateY(0);}}
-
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    .reveal{opacity:1;transform:none;transition:none;}
-    .hero-load{opacity:1;transform:none;animation:none;}
-    *{transition-duration:.01ms !important;animation-duration:.01ms !important;}
-  }
-
-  /* ============================================================
-     RESPONSIVE
-     ============================================================ */
-  @media (max-width:900px){
-    .hero__inner,.about__grid,.contact__inner{grid-template-columns:1fr;}
-    .hero__visual{order:-1;max-width:380px;margin-inline:auto;width:100%;}
-    .skills__grid,.projects__grid,.testimonials__grid{grid-template-columns:1fr;}
-  }
-  @media (max-width:760px){
-    .nav{
-      position:fixed;top:var(--header-h);left:0;right:0;bottom:0;
-      background:var(--bg);
-      transform:translateY(-8px);
-      opacity:0;visibility:hidden;
-      transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s;
-      padding:2rem;
-      overflow-y:auto;
-    }
-    .nav.is-open{opacity:1;visibility:visible;transform:translateY(0);}
-    .nav__list{flex-direction:column;gap:1.5rem;}
-    .nav__link{font-size:1.1rem;}
-    .menu-toggle{display:flex;}
-    .header__actions .btn--sm{display:none;}
-  }
-</style>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bima Sangkur - Portfolio">
+  <meta property="og:description" content="Portofolio Bima Sangkur — Junior Web Developer & App Developer.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bima Sangkur - Portfolio">
+  <meta name="twitter:description" content="Portofolio Bima Sangkur — Junior Web Developer & App Developer.">
+  <meta name="twitter:image" content="images/og-image.png">
 </head>
-<body>
 
-<header class="header" id="header">
-  <div class="container header__inner">
-    <a href="#home" class="logo">Nama Anda<span>.</span></a>
-    <nav class="nav" id="nav">
-      <ul class="nav__list">
-        <li><a href="#about" class="nav__link">Tentang</a></li>
-        <li><a href="#skills" class="nav__link">Keahlian</a></li>
-        <li><a href="#projects" class="nav__link">Proyek</a></li>
-        <li><a href="#experience" class="nav__link">Pengalaman</a></li>
-        <li><a href="#contact" class="nav__link">Kontak</a></li>
-      </ul>
-    </nav>
-    <div class="header__actions">
-      <button class="icon-btn" id="themeToggle" aria-label="Ganti tema terang/gelap" type="button">◐</button>
-      <a href="#contact" class="btn btn--primary btn--sm">Hubungi Saya</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false" type="button">
+<body>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="#home" class="logo">Bima Sangkur</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
-    </div>
-  </div>
-</header>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#skills">Skill</a></li>
+        <li><a href="#projects">Proyek</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
+  <main>
+    <section id="home" class="hero container">
+      <div class="hero-text">
+        <p class="hero-greeting">Halo, saya</p>
+        <h1 class="hero-name">Bima Sangkur</h1>
+        <h2 class="hero-role">Web Developer - App Developer</h2>
+        <p class="hero-desc">Saya adalah Junior Web Developer dan juga App Developer yang masih berlajar. Dengan mengandalkan berbagai video dari berbagai sumber, saya terus belajar dan berkembang dalam dunia pemrograman.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+          <a href="#about" class="btn btn-outline">Tentang Saya</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="home">
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <p class="eyebrow hero-load" style="animation-delay:.05s">Portofolio — Web Developer</p>
-        <h1 class="hero-load" style="animation-delay:.15s"><!-- EDIT: nama lengkap kamu -->Nama Anda</h1>
-        <p class="hero__role hero-load" style="animation-delay:.25s"><!-- EDIT: peran/jabatan -->Full-Stack Web Developer</p>
-        <p class="hero__desc hero-load" style="animation-delay:.35s">
-          Saya merancang dan membangun aplikasi web dari ujung ke ujung — antarmuka yang rapi di sisi pengguna, dan sistem yang stabil di sisi server. Fokus pada kode yang bersih, performa, dan pengalaman pengguna yang terasa mulus.
-        </p>
-        <div class="hero__cta hero-load" style="animation-delay:.45s">
-          <a href="#projects" class="btn btn--primary">Lihat Proyek Saya</a>
-          <a href="cv-anda.pdf" class="btn btn--outline" download><!-- EDIT: ganti dengan file CV kamu -->Unduh CV</a>
-        </div>
-        <div class="hero__social hero-load" style="animation-delay:.55s">
-          <a href="https://github.com/username" class="text-link" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://linkedin.com/in/username" class="text-link" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a href="mailto:email@contoh.com" class="text-link">Email ↗</a>
-        </div>
+    <section id="about" class="about container reveal">
+      <h2 class="section-title">Tentang Saya</h2>
+      <div class="about-content">
+        <p>Saya mahasiswa. Saya cukup bisa untuk menggunakan berbagai bahasa pemrograman dan teknologi terkini dalam pengembangan web dan aplikasi.</p>
       </div>
-      <div class="hero__visual hero-load" style="animation-delay:.3s">
-        <div class="id-card">
-          <div class="id-card__top">
-            <div class="id-card__mono">NA</div>
-            <div class="id-card__status"><span class="id-card__dot"></span>Tersedia untuk proyek</div>
-          </div>
-          <div class="id-card__row"><span class="id-card__label">Lokasi</span><span class="id-card__value"><!-- EDIT -->Indonesia (Remote)</span></div>
-          <div class="id-card__row"><span class="id-card__label">Fokus</span><span class="id-card__value">Web Application</span></div>
-          <div class="id-card__row"><span class="id-card__label">Pengalaman</span><span class="id-card__value">3+ Tahun</span></div>
-          <div class="id-card__row"><span class="id-card__label">Bahasa</span><span class="id-card__value">ID / EN</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Tentang Saya</p>
-        <h2 class="section-title">Berkenalan lebih <em>dekat</em></h2>
-      </div>
-      <div class="about__grid">
-        <div class="about__text reveal">
-          <p>
-            Saya seorang <strong>Full-Stack Web Developer</strong> dengan pengalaman membangun produk digital, mulai dari situs company profile sederhana sampai aplikasi web berskala tim. Saya senang menerjemahkan kebutuhan bisnis menjadi sistem yang jelas, terstruktur, dan mudah dikembangkan lebih lanjut.
-          </p>
-          <p>
-            Di luar coding, saya tertarik pada desain sistem, praktik <strong>clean code</strong>, dan terus belajar tools baru. Saya terbiasa bekerja dalam tim lintas fungsi menggunakan alur kerja Agile, dan senang berdiskusi soal arsitektur maupun detail antarmuka.
-          </p>
-          <!-- EDIT: ganti dua paragraf di atas dengan cerita & pengalamanmu sendiri -->
-        </div>
-        <div class="stats reveal">
-          <div class="stat">
-            <span class="stat__num" data-count="3">0</span><span class="stat__suffix">+</span>
-            <p>Tahun Pengalaman</p>
-          </div>
-          <div class="stat">
-            <span class="stat__num" data-count="25">0</span><span class="stat__suffix">+</span>
-            <p>Proyek Selesai</p>
-          </div>
-          <div class="stat">
-            <span class="stat__num" data-count="15">0</span><span class="stat__suffix">+</span>
-            <p>Klien &amp; Tim Puas</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SKILLS ============ -->
-  <section class="skills" id="skills">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Keahlian</p>
-        <h2 class="section-title">Tools &amp; teknologi yang saya <em>kuasai</em></h2>
-      </div>
-      <div class="skills__grid">
-        <div class="skill-card reveal">
+    <section id="skills" class="skills container reveal">
+      <h2 class="section-title">Skill</h2>
+      <div class="skills-groups">
+        <div class="skills-group">
           <h3>Frontend</h3>
-          <div class="tags">
-            <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
-            <span class="tag">React</span><span class="tag">Vue.js</span><span class="tag">Tailwind CSS</span>
-          </div>
+          <ul class="skills-list">
+            <li class="skill-item">HTML</li>
+            <li class="skill-item">CSS</li>
+            <li class="skill-item">JavaScript</li>
+            <li class="skill-item">React</li>
+          </ul>
         </div>
-        <div class="skill-card reveal">
+        <div class="skills-group">
           <h3>Backend</h3>
-          <div class="tags">
-            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PHP</span>
-            <span class="tag">REST API</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <h3>Tools &amp; Infrastruktur</h3>
-          <div class="tags">
-            <span class="tag">Git</span><span class="tag">Docker</span><span class="tag">Figma</span>
-            <span class="tag">CI/CD</span><span class="tag">Linux</span><span class="tag">AWS</span>
-          </div>
-        </div>
-      </div>
-      <!-- EDIT: sesuaikan daftar skill di atas dengan keahlianmu -->
-    </div>
-  </section>
-
-  <!-- ============ PROJECTS ============ -->
-  <section class="projects" id="projects">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Portofolio</p>
-        <h2 class="section-title">Proyek <em>terbaru</em></h2>
-        <p class="section-intro">Beberapa proyek yang pernah saya kerjakan, dari sistem internal sampai aplikasi yang dipakai publik.</p>
-      </div>
-      <div class="projects__grid">
-
-        <article class="project-card reveal">
-          <div class="project-card__top">
-            <span class="project-card__cat">Internal Tool</span>
-            <span class="project-card__year">2024</span>
-          </div>
-          <h3>Sistem Manajemen Inventaris Gudang</h3>
-          <p>Aplikasi pelacakan stok berbasis web dengan pemindaian barcode, laporan otomatis, dan notifikasi stok menipis untuk tim operasional.</p>
-          <div class="tags">
-            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span>
-          </div>
-          <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo ↗</a>
-            <a href="#" class="text-link">Kode Sumber ↗</a>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-card__top">
-            <span class="project-card__cat">E-Commerce</span>
-            <span class="project-card__year">2023</span>
-          </div>
-          <h3>Platform E-Commerce "TokoKita"</h3>
-          <p>Toko online lengkap dengan katalog produk, keranjang belanja, integrasi payment gateway, dan dashboard admin untuk kelola pesanan.</p>
-          <div class="tags">
-            <span class="tag">Next.js</span><span class="tag">Tailwind CSS</span><span class="tag">MongoDB</span>
-          </div>
-          <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo ↗</a>
-            <a href="#" class="text-link">Kode Sumber ↗</a>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-card__top">
-            <span class="project-card__cat">Dashboard</span>
-            <span class="project-card__year">2023</span>
-          </div>
-          <h3>Dashboard Analitik Penjualan Real-time</h3>
-          <p>Visualisasi data penjualan secara langsung menggunakan WebSocket, dengan grafik interaktif dan filter periode kustom.</p>
-          <div class="tags">
-            <span class="tag">Vue.js</span><span class="tag">Chart.js</span><span class="tag">Redis</span>
-          </div>
-          <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo ↗</a>
-            <a href="#" class="text-link">Kode Sumber ↗</a>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-card__top">
-            <span class="project-card__cat">Productivity</span>
-            <span class="project-card__year">2022</span>
-          </div>
-          <h3>Aplikasi Manajemen Tugas Tim</h3>
-          <p>Papan kanban drag-and-drop untuk kolaborasi tim, lengkap dengan notifikasi real-time dan riwayat aktivitas.</p>
-          <div class="tags">
-            <span class="tag">React</span><span class="tag">Firebase</span><span class="tag">DnD Kit</span>
-          </div>
-          <div class="project-card__links">
-            <a href="#" class="text-link">Live Demo ↗</a>
-            <a href="#" class="text-link">Kode Sumber ↗</a>
-          </div>
-        </article>
-
-      </div>
-      <!-- EDIT: ganti judul, deskripsi, tech tag, dan link tiap proyek dengan proyekmu sendiri -->
-    </div>
-  </section>
-
-  <!-- ============ EXPERIENCE ============ -->
-  <section class="experience" id="experience">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Pengalaman</p>
-        <h2 class="section-title">Perjalanan <em>karier</em></h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <p class="timeline-item__date">2023 — Sekarang</p>
-          <h3>Full-Stack Developer</h3>
-          <p class="timeline-item__company"><!-- EDIT -->PT Nama Perusahaan Anda</p>
-          <ul>
-            <li>Memimpin pengembangan ulang platform internal, meningkatkan kecepatan halaman sebesar 40%.</li>
-            <li>Membangun dan memelihara REST API yang digunakan oleh 3 tim produk.</li>
-            <li>Membimbing 2 developer junior dalam praktik code review dan testing.</li>
-          </ul>
-        </div>
-        <div class="timeline-item reveal">
-          <p class="timeline-item__date">2021 — 2023</p>
-          <h3>Frontend Developer</h3>
-          <p class="timeline-item__company">Startup Teknologi XYZ</p>
-          <ul>
-            <li>Mengembangkan komponen UI reusable dengan React &amp; TypeScript.</li>
-            <li>Berkolaborasi dengan tim desain untuk implementasi design system.</li>
-          </ul>
-        </div>
-        <div class="timeline-item reveal">
-          <p class="timeline-item__date">2020 — 2021</p>
-          <h3>Junior Web Developer (Magang)</h3>
-          <p class="timeline-item__company">Agensi Digital ABC</p>
-          <ul>
-            <li>Membantu membangun 10+ website landing page untuk klien UMKM.</li>
+          <ul class="skills-list">
+            <li class="skill-item">PHP</li>
+            <li class="skill-item">Node.js</li>
+            <li class="skill-item">MySQL</li>
           </ul>
         </div>
       </div>
-      <!-- EDIT: ganti dengan riwayat pekerjaan/magang kamu sendiri -->
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Testimoni</p>
-        <h2 class="section-title">Kata mereka yang pernah <em>bekerja sama</em></h2>
+    <section id="projects" class="projects container reveal">
+      <h2 class="section-title">Proyek</h2>
+      <p class="projects-empty">Belum ada proyek untuk ditampilkan di sini — sedang saya kerjakan. Kembali lagi nanti.</p>
+      <!--
+      Template kartu proyek, aktifkan lagi begitu ada proyek nyata untuk ditampilkan:
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true"></div>
+          <h3>Nama Proyek</h3>
+          <p>Deskripsi singkat proyek.</p>
+          <div class="project-links">
+            <a href="URL_DEMO" target="_blank" rel="noopener">Demo</a>
+            <a href="URL_REPO" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </article>
       </div>
-      <div class="testimonials__grid">
-        <div class="quote-card reveal">
-          <p>"Sangat teliti dan komunikatif. Setiap requirement dieksekusi dengan rapi, bahkan sering memberi masukan yang bikin produk jadi lebih baik."</p>
-          <div class="quote-card__author"><strong>Nama Rekan Kerja</strong>Product Manager, Perusahaan X</div>
-        </div>
-        <div class="quote-card reveal">
-          <p>"Salah satu developer paling bisa diandalkan yang pernah saya ajak kerja. Deadline selalu terjaga tanpa mengorbankan kualitas kode."</p>
-          <div class="quote-card__author"><strong>Nama Klien</strong>Founder, Startup Y</div>
-        </div>
+      -->
+    </section>
+
+    <section id="contact" class="contact container reveal">
+      <h2 class="section-title">Kontak</h2>
+      <p class="contact-desc">Saat ini saya terbuka untuk kesempatan magang maupun posisi entry-level sebagai Web Developer. Jika Anda memiliki peluang yang sesuai, jangan ragu untuk menghubungi saya.</p>
+      <div class="contact-links">
+        <a href="mailto:bimasangkur6@gmail.com" class="email-link">Email</a>
       </div>
-      <!-- EDIT: ganti dengan testimoni asli, atau hapus section ini jika belum punya -->
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ CONTACT ============ -->
-  <section class="contact" id="contact">
-    <div class="container contact__inner">
-      <div class="contact__info reveal">
-        <p class="eyebrow">Kontak</p>
-        <h2 class="section-title">Mari <em>berkolaborasi</em></h2>
-        <p class="section-intro">Tertarik bekerja sama atau sekadar ingin diskusi soal proyek? Kirim pesan, saya akan balas secepatnya.</p>
-        <ul class="contact__list">
-          <li><span class="label">Email</span><span class="value">email@contoh.com</span></li>
-          <li><span class="label">Telepon / WA</span><span class="value">+62 812-3456-7890</span></li>
-          <li><span class="label">Lokasi</span><span class="value">Indonesia (Remote)</span></li>
-        </ul>
-        <!-- EDIT: ganti data kontak di atas dengan data kamu -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> Bima Sangkur. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/bimasangkur6-jpg" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/bima-sangkur-4a63943b9" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/bimasangkur" target="_blank" rel="noopener">Instagram</a>
       </div>
-      <form class="contact__form reveal" id="contactForm">
-        <div class="form-row">
-          <label for="name">Nama</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email">
-        </div>
-        <div class="form-row">
-          <label for="message">Pesan</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary">Kirim Pesan</button>
-        <p class="form-status" id="formStatus" role="status"></p>
-      </form>
     </div>
-  </section>
+  </footer>
 
-</main>
-
-<footer class="footer">
-  <div class="container footer__inner">
-    <p>© <span id="year"></span> Nama Anda. Dibuat dengan HTML, CSS &amp; JavaScript murni.</p>
-    <button class="back-to-top" id="backToTop" type="button">Kembali ke atas ↑</button>
-  </div>
-</footer>
-
-<script>
-(function(){
-  "use strict";
-
-  var root = document.documentElement;
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* ---------- Theme toggle ---------- */
-  var themeToggle = document.getElementById("themeToggle");
-  var savedTheme = localStorage.getItem("theme");
-  if (savedTheme) root.setAttribute("data-theme", savedTheme);
-
-  function currentTheme(){
-    var attr = root.getAttribute("data-theme");
-    if (attr) return attr;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  }
-  function updateToggleLabel(){
-    themeToggle.textContent = currentTheme() === "dark" ? "☀" : "◐";
-  }
-  updateToggleLabel();
-  themeToggle.addEventListener("click", function(){
-    var next = currentTheme() === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-    updateToggleLabel();
-  });
-
-  /* ---------- Mobile menu ---------- */
-  var menuToggle = document.getElementById("menuToggle");
-  var nav = document.getElementById("nav");
-  menuToggle.addEventListener("click", function(){
-    var isOpen = nav.classList.toggle("is-open");
-    menuToggle.classList.toggle("is-open", isOpen);
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-  });
-  nav.querySelectorAll(".nav__link").forEach(function(link){
-    link.addEventListener("click", function(){
-      nav.classList.remove("is-open");
-      menuToggle.classList.remove("is-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  /* ---------- Header scroll state ---------- */
-  var header = document.getElementById("header");
-  function onScroll(){
-    header.classList.toggle("is-scrolled", window.scrollY > 10);
-  }
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-
-  /* ---------- Back to top ---------- */
-  document.getElementById("backToTop").addEventListener("click", function(){
-    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
-  });
-
-  /* ---------- Footer year ---------- */
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  /* ---------- Scroll reveal ---------- */
-  var revealEls = document.querySelectorAll(".reveal");
-  if (reduceMotion || !("IntersectionObserver" in window)) {
-    revealEls.forEach(function(el){ el.classList.add("is-visible"); });
-  } else {
-    var revealObserver = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
-    revealEls.forEach(function(el){ revealObserver.observe(el); });
-  }
-
-  /* ---------- Animated counters ---------- */
-  var counters = document.querySelectorAll(".stat__num");
-  function animateCounter(el){
-    var target = parseInt(el.getAttribute("data-count"), 10) || 0;
-    if (reduceMotion) { el.textContent = target; return; }
-    var start = null;
-    var duration = 1200;
-    function step(ts){
-      if (!start) start = ts;
-      var progress = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target);
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  if ("IntersectionObserver" in window) {
-    var counterObserver = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(function(el){ counterObserver.observe(el); });
-  } else {
-    counters.forEach(animateCounter);
-  }
-
-  /* ---------- Scrollspy ---------- */
-  var sections = document.querySelectorAll("main section[id]");
-  var navLinks = document.querySelectorAll(".nav__link");
-  function onScrollSpy(){
-    var scrollPos = window.scrollY + document.getElementById("header").offsetHeight + 20;
-    var currentId = "";
-    sections.forEach(function(sec){
-      if (sec.offsetTop <= scrollPos) currentId = sec.id;
-    });
-    navLinks.forEach(function(link){
-      link.classList.toggle("is-active", link.getAttribute("href") === "#" + currentId);
-    });
-  }
-  onScrollSpy();
-  window.addEventListener("scroll", onScrollSpy, { passive: true });
-
-  /* ---------- Contact form (front-end only) ---------- */
-  var form = document.getElementById("contactForm");
-  var status = document.getElementById("formStatus");
-  form.addEventListener("submit", function(e){
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      status.textContent = "Mohon lengkapi semua kolom dengan benar.";
-      status.className = "form-status error";
-      return;
-    }
-    // CATATAN: form ini belum terhubung ke layanan pengiriman email apa pun.
-    // Hubungkan ke layanan seperti Formspree, EmailJS, atau backend milikmu sendiri
-    // agar pesan benar-benar terkirim.
-    status.textContent = "Terima kasih! Pesan kamu berhasil disiapkan (hubungkan form ini ke layanan email untuk pengiriman sungguhan).";
-    status.className = "form-status success";
-    form.reset();
-  });
-
-})();
-</script>
+  <script src="js/script.js"></script>
 </body>
 </html>
