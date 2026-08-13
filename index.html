@@ -1,125 +1,161 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bima Sangkur</title>
-  <meta name="description" content="Portofolio Bima Sangkur — Junior Web Developer & App Developer.">
-  <meta name="theme-color" content="#05070d">
+  <meta name="description" content="Portfolio of Bima Sangkur — Junior Web Developer & App Developer.">
+  <meta name="theme-color" content="#0b0b0d">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&family=Archivo:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bima Sangkur - Portfolio">
-  <meta property="og:description" content="Portofolio Bima Sangkur — Junior Web Developer & App Developer.">
+  <meta property="og:description" content="Portfolio of Bima Sangkur — Junior Web Developer & App Developer.">
   <meta property="og:image" content="images/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bima Sangkur - Portfolio">
-  <meta name="twitter:description" content="Portofolio Bima Sangkur — Junior Web Developer & App Developer.">
+  <meta name="twitter:description" content="Portfolio of Bima Sangkur — Junior Web Developer & App Developer.">
   <meta name="twitter:image" content="images/og-image.png">
 </head>
 
 <body>
-  <header class="site-header">
-    <nav class="navbar container">
-      <a href="#home" class="logo">Bima Sangkur</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Tentang</a></li>
-        <li><a href="#skills">Skill</a></li>
-        <li><a href="#projects">Proyek</a></li>
-        <li><a href="#contact">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-  <main>
-    <section id="home" class="hero container">
-      <div class="hero-text">
-        <p class="hero-greeting">Halo, saya</p>
-        <h1 class="hero-name">Bima Sangkur</h1>
-        <h2 class="hero-role">Web Developer - App Developer</h2>
-        <p class="hero-desc">Saya adalah Junior Web Developer dan juga App Developer yang masih berlajar. Dengan mengandalkan berbagai video dari berbagai sumber, saya terus belajar dan berkembang dalam dunia pemrograman.</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
-          <a href="#about" class="btn btn-outline">Tentang Saya</a>
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-texture" aria-hidden="true"></div>
+
+      <div class="sidebar-inner">
+        <div class="sidebar-top">
+          <a href="#home" class="mark">
+            <span class="mark-line">Bima</span>
+            <span class="mark-line">Sangkur</span>
+          </a>
+
+          <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPanel">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-      </div>
-    </section>
 
-    <section id="about" class="about container reveal">
-      <h2 class="section-title">Tentang Saya</h2>
-      <div class="about-content">
-        <p>Saya mahasiswa. Saya cukup bisa untuk menggunakan berbagai bahasa pemrograman dan teknologi terkini dalam pengembangan web dan aplikasi.</p>
-      </div>
-    </section>
+        <div class="sidebar-panel" id="navPanel">
+          <p class="sidebar-role">Web &amp; App Developer</p>
 
-    <section id="skills" class="skills container reveal">
-      <h2 class="section-title">Skill</h2>
-      <div class="skills-groups">
-        <div class="skills-group">
-          <h3>Frontend</h3>
-          <ul class="skills-list">
-            <li class="skill-item">HTML</li>
-            <li class="skill-item">CSS</li>
-            <li class="skill-item">JavaScript</li>
-            <li class="skill-item">React</li>
-          </ul>
-        </div>
-        <div class="skills-group">
-          <h3>Backend</h3>
-          <ul class="skills-list">
-            <li class="skill-item">PHP</li>
-            <li class="skill-item">Node.js</li>
-            <li class="skill-item">MySQL</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+          <nav class="sidebar-nav" aria-label="Main navigation">
+            <ol>
+              <li><a href="#home"><span class="nav-label">Home</span></a></li>
+              <li><a href="#about"><span class="nav-label">About</span></a></li>
+              <li><a href="#skills"><span class="nav-label">Skills</span></a></li>
+              <li><a href="#projects"><span class="nav-label">Projects</span></a></li>
+              <li><a href="#contact"><span class="nav-label">Contact</span></a></li>
+            </ol>
+          </nav>
 
-    <section id="projects" class="projects container reveal">
-      <h2 class="section-title">Proyek</h2>
-      <p class="projects-empty">Belum ada proyek untuk ditampilkan di sini — sedang saya kerjakan. Kembali lagi nanti.</p>
-      <!--
-      Template kartu proyek, aktifkan lagi begitu ada proyek nyata untuk ditampilkan:
-
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-thumb" aria-hidden="true"></div>
-          <h3>Nama Proyek</h3>
-          <p>Deskripsi singkat proyek.</p>
-          <div class="project-links">
-            <a href="URL_DEMO" target="_blank" rel="noopener">Demo</a>
-            <a href="URL_REPO" target="_blank" rel="noopener">Source Code</a>
+          <div class="sidebar-footer">
+            <div class="social-links">
+              <a href="https://github.com/bimasangkur6-jpg" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.linkedin.com/in/bima-sangkur-4a63943b9" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.instagram.com/bimasangkur" target="_blank" rel="noopener">Instagram</a>
+            </div>
+            <p class="sidebar-copy">&copy; <span id="year"></span> Bima Sangkur</p>
           </div>
-        </article>
+        </div>
       </div>
-      -->
-    </section>
+    </aside>
 
-    <section id="contact" class="contact container reveal">
-      <h2 class="section-title">Kontak</h2>
-      <p class="contact-desc">Saat ini saya terbuka untuk kesempatan magang maupun posisi entry-level sebagai Web Developer. Jika Anda memiliki peluang yang sesuai, jangan ragu untuk menghubungi saya.</p>
-      <div class="contact-links">
-        <a href="mailto:bimasangkur6@gmail.com" class="email-link">Email</a>
-      </div>
-    </section>
+    <main class="content">
 
-  </main>
+      <section id="home" class="hero">
+        <h1 class="hero-name">
+          <span class="reveal-word">Bima</span>
+          <span class="reveal-word">Sangkur</span>
+        </h1>
+        <h2 class="hero-role reveal-word">Junior Web Developer &amp; App Developer</h2>
+        <p class="hero-desc reveal-word">I'm a student currently learning web and app development. Most of what I know is self-taught, from official docs and video tutorials, which I then try out through small personal projects.</p>
+        <div class="hero-actions reveal-word">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#about" class="link-arrow">About me <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>&copy; <span id="year"></span> Bima Sangkur. All rights reserved.</p>
-      <div class="social-links">
-        <a href="https://github.com/bimasangkur6-jpg" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/bima-sangkur-4a63943b9" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.instagram.com/bimasangkur" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-  </footer>
+      <section id="about" class="section reveal">
+        <p class="section-index">About</p>
+        <h2 class="section-heading">Still learning, one step at a time.</h2>
+        <div class="section-body">
+          <p>I'm a student focused on web and app development. I'm comfortable with several programming languages and technologies commonly used today, and I'd rather understand the concepts first than rush toward results.</p>
+        </div>
+      </section>
+
+      <section id="skills" class="section reveal">
+        <p class="section-index">Skills</p>
+        <h2 class="section-heading">What I'm currently using and learning.</h2>
+
+        <div class="skills-groups">
+          <div class="skills-group">
+            <h3>Frontend</h3>
+            <ul class="skills-list">
+              <li class="skill-item">HTML</li>
+              <li class="skill-item">CSS</li>
+              <li class="skill-item">JavaScript</li>
+              <li class="skill-item">React</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <h3>Backend</h3>
+            <ul class="skills-list">
+              <li class="skill-item">PHP</li>
+              <li class="skill-item">Node.js</li>
+              <li class="skill-item">MySQL</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section reveal">
+        <p class="section-index">Projects</p>
+        <h2 class="section-heading">A couple of things I've built.</h2>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-thumb" aria-hidden="true"></div>
+            <h3>Editorial Landing Page</h3>
+            <p>A landing page exploring a Swiss/editorial style — black and white with a single red accent, bold type, and an asymmetric layout. Plain HTML, CSS, and JavaScript, no framework.</p>
+            <div class="project-links">
+              <a href="https://github.com/bimasangkur6-jpg/project-1" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb" aria-hidden="true"></div>
+            <h3>RS Sehat Sejahtera</h3>
+            <p>A hospital website concept with an online patient registration flow: booking, status lookup, and a staff dashboard, backed by localStorage instead of a real database. Built with Next.js and TypeScript.</p>
+            <div class="project-links">
+              <a href="https://github.com/bimasangkur6-jpg/project-2" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section reveal">
+        <p class="section-index">Contact</p>
+        <h2 class="section-heading">Feel free to reach out.</h2>
+        <div class="section-body">
+          <p>I'm currently open to internship opportunities and entry-level Web Developer roles. If you think there's a good fit, don't hesitate to get in touch.</p>
+        </div>
+        <a href="mailto:bimasangkur6@gmail.com" class="email-link">bimasangkur6@gmail.com<span aria-hidden="true">↗</span></a>
+      </section>
+
+      <p class="content-end">Built with plain HTML, CSS &amp; JavaScript.</p>
+
+    </main>
+  </div>
 
   <script src="js/script.js"></script>
 </body>

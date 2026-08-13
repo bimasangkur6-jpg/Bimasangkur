@@ -1,27 +1,25 @@
-// ===== Tahun otomatis di footer =====
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ===== Toggle menu mobile =====
 const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
+const navPanel = document.getElementById('navPanel');
 
 navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('active');
+  const isOpen = navPanel.classList.toggle('active');
   navToggle.setAttribute('aria-expanded', String(isOpen));
-  navToggle.setAttribute('aria-label', isOpen ? 'Tutup menu' : 'Buka menu');
+  navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  document.body.classList.toggle('nav-open', isOpen);
 });
 
-// Tutup menu saat salah satu link diklik (khusus mobile)
-navLinks.querySelectorAll('a').forEach((link) => {
+navPanel.querySelectorAll('.sidebar-nav a').forEach((link) => {
   link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
+    navPanel.classList.remove('active');
     navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.setAttribute('aria-label', 'Buka menu');
+    navToggle.setAttribute('aria-label', 'Open menu');
+    document.body.classList.remove('nav-open');
   });
 });
 
-// ===== Scroll reveal: section muncul (fade + naik) saat masuk layar =====
-const revealEls = document.querySelectorAll('.reveal');
+const revealEls = document.querySelectorAll('.section');
 
 if ('IntersectionObserver' in window && revealEls.length) {
   const revealObserver = new IntersectionObserver((entries) => {
@@ -35,15 +33,13 @@ if ('IntersectionObserver' in window && revealEls.length) {
 
   revealEls.forEach((el) => revealObserver.observe(el));
 } else {
-  // Browser lama tanpa IntersectionObserver: langsung tampilkan saja
   revealEls.forEach((el) => el.classList.add('is-visible'));
 }
 
-// ===== Scrollspy: link nav aktif otomatis ikut section yang lagi keliatan =====
-const spySections = document.querySelectorAll('main section[id]');
+const spySections = document.querySelectorAll('main.content section[id]');
 const navLinkByTarget = new Map();
 
-navLinks.querySelectorAll('a[href^="#"]').forEach((link) => {
+navPanel.querySelectorAll('.sidebar-nav a[href^="#"]').forEach((link) => {
   navLinkByTarget.set(link.getAttribute('href').slice(1), link);
 });
 
@@ -58,4 +54,26 @@ if ('IntersectionObserver' in window && spySections.length) {
   }, { rootMargin: '-40% 0px -55% 0px' });
 
   spySections.forEach((section) => spyObserver.observe(section));
+}
+
+const scrollProgress = document.getElementById('scrollProgress');
+
+if (scrollProgress) {
+  let ticking = false;
+
+  const updateProgress = () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+    scrollProgress.style.width = progress + '%';
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateProgress();
 }
