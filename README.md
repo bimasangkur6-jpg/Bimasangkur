@@ -43,3 +43,7 @@ Form di section "Kontak" saat ini **belum terhubung ke layanan pengiriman email*
 - **Netlify Drop**: [app.netlify.com/drop](https://app.netlify.com/drop) — drag & drop folder ini
 - **Vercel**: `vercel deploy`
 - **GitHub Pages**: push ke repo GitHub, aktifkan di Settings → Pages
+
+## License
+
+MIT
